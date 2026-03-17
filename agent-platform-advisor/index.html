@@ -1181,7 +1181,24 @@
     </div>
   </div>
 </div></div>
-        <div id="assessment-section" class="fade-in hidden"><!-- questions --></div>
+        <div id="assessment-section" class="fade-in hidden"><div class="card">
+  <div class="card-content">
+    <div id="question-counter" style="font-size:13px; color:hsl(var(--muted-foreground));
+         margin-bottom:8px;"></div>
+    <h2 class="question-title" id="question-title"></h2>
+    <p class="question-subtitle" id="question-subtitle" style="color:hsl(var(--muted-foreground));
+       margin-bottom:24px;"></p>
+    <div class="options-list" id="options-list"></div>
+    <div class="center" style="margin-top:32px; gap:12px;">
+      <button class="btn btn-ghost" id="prev-btn">
+        <span class="icon icon-chevron-left"></span> Back
+      </button>
+      <button class="btn btn-primary" id="next-btn" disabled>
+        Next <span class="icon icon-chevron-right"></span>
+      </button>
+    </div>
+  </div>
+</div></div>
         <div id="recommendation-section" class="fade-in hidden"><!-- results --></div>
       </div>
     </main>
@@ -1261,6 +1278,8 @@
         document.getElementById('start-btn').addEventListener('click', () => {
           showSection('prescreen-section');
         });
+        document.getElementById('next-btn').addEventListener('click', handleNext);
+        document.getElementById('prev-btn').addEventListener('click', handlePrev);
       }
 
       function handlePrescreenYes() {
@@ -1278,9 +1297,69 @@
         showSection('assessment-section');
       }
 
-      // Stubs — implemented in later tasks
+      function renderQuestion() {
+        const question = apa.questions[currentQuestionIndex];
+        const total = apa.questions.length;
+
+        document.getElementById('question-counter').textContent =
+          `Question ${currentQuestionIndex + 1} of ${total}`;
+        document.getElementById('question-title').textContent = question.prompt;
+        document.getElementById('question-subtitle').textContent = question.purpose || '';
+
+        const optionsList = document.getElementById('options-list');
+        optionsList.innerHTML = '';
+        question.options.forEach(opt => {
+          const div = document.createElement('div');
+          div.className = 'option-card' + (answers[question.id] === opt.id ? ' selected' : '');
+          div.innerHTML = `
+            <div class="option-content">
+              <div class="option-label">${opt.label}</div>
+            </div>`;
+          div.addEventListener('click', () => {
+            answers[question.id] = opt.id;
+            renderQuestion(); // re-render to show selection
+          });
+          optionsList.appendChild(div);
+        });
+
+        const nextBtn = document.getElementById('next-btn');
+        nextBtn.disabled = !answers[question.id];
+        nextBtn.textContent = currentQuestionIndex === total - 1
+          ? 'Get Recommendation ▶' : 'Next ▶';
+
+        document.getElementById('prev-btn').disabled = false;
+      }
+
+      function handleNext() {
+        const question = apa.questions[currentQuestionIndex];
+
+        // Early exit: q5d skips remaining questions
+        if (answers[question.id] === 'q5d') {
+          renderRecommendation();
+          showSection('recommendation-section');
+          return;
+        }
+
+        if (currentQuestionIndex < apa.questions.length - 1) {
+          currentQuestionIndex++;
+          renderQuestion();
+        } else {
+          renderRecommendation();
+          showSection('recommendation-section');
+        }
+      }
+
+      function handlePrev() {
+        if (currentQuestionIndex > 0) {
+          currentQuestionIndex--;
+          renderQuestion();
+        } else {
+          showSection('prescreen-section');
+        }
+      }
+
+      // Stub — implemented in later tasks
       function renderRecommendation() {}
-      function renderQuestion() {}
 
       document.addEventListener('DOMContentLoaded', boot);
     </script>
