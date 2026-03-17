@@ -1133,8 +1133,54 @@
             </div>
           </div>
         </div>
-        <div id="welcome-section"  class="fade-in hidden"><!-- welcome --></div>
-        <div id="prescreen-section" class="fade-in hidden"><!-- prescreen --></div>
+        <div id="welcome-section"  class="fade-in hidden"><div class="card">
+  <div class="card-content" style="text-align:center; padding: 48px 32px;">
+    <div style="font-size:64px; margin-bottom:24px;">🤖</div>
+    <h1 style="font-size:32px; font-weight:700; margin-bottom:16px;">
+      Agent Platform Advisor
+    </h1>
+    <p style="color:hsl(var(--muted-foreground)); font-size:16px; max-width:560px;
+              margin: 0 auto 32px;">
+      Answer a few questions to find the right Microsoft agent platform for your
+      scenario — Agent Builder, M365 Copilot, Copilot Studio, or Microsoft Foundry.
+    </p>
+    <button class="btn btn-primary btn-lg" id="start-btn">
+      Get Started <span class="icon icon-chevron-right"></span>
+    </button>
+  </div>
+</div></div>
+        <div id="prescreen-section" class="fade-in hidden"><div class="card">
+  <div class="card-content" style="padding: 48px 32px;">
+    <h2 style="font-size:24px; font-weight:600; margin-bottom:8px;">
+      Quick question before we start
+    </h2>
+    <p style="color:hsl(var(--muted-foreground)); margin-bottom:32px;">
+      This helps us tailor the recommendation for you.
+    </p>
+    <div class="options-list">
+      <div class="option-card" id="prescreen-yes" style="cursor:pointer;" onclick="handlePrescreenYes()">
+        <div class="option-content">
+          <div class="option-label">
+            ✅ Yes — I want a built-in Microsoft 365 Copilot experience
+          </div>
+          <div class="option-description">
+            I'm looking for what's available out of the box within Microsoft 365
+          </div>
+        </div>
+      </div>
+      <div class="option-card" id="prescreen-no" style="cursor:pointer;" onclick="handlePrescreenNo()">
+        <div class="option-content">
+          <div class="option-label">
+            🔧 No — I need a custom agent with specific requirements
+          </div>
+          <div class="option-description">
+            I want to evaluate all platform options based on my scenario
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div></div>
         <div id="assessment-section" class="fade-in hidden"><!-- questions --></div>
         <div id="recommendation-section" class="fade-in hidden"><!-- results --></div>
       </div>
@@ -1202,12 +1248,39 @@
           const text = await res.text();
           apa = jsyaml.load(text);
           showSection('welcome-section');
+          setupListeners();
         } catch (err) {
           document.getElementById('error-message').textContent =
             `Could not load advisor data: ${err.message}`;
           showSection('error-section');
         }
       }
+
+      function setupListeners() {
+        document.getElementById('start-btn').addEventListener('click', () => {
+          showSection('prescreen-section');
+        });
+      }
+
+      function handlePrescreenYes() {
+        fastTrack = true;
+        answers = {};
+        renderRecommendation();
+        showSection('recommendation-section');
+      }
+
+      function handlePrescreenNo() {
+        fastTrack = false;
+        answers = {};
+        currentQuestionIndex = 0;
+        renderQuestion();
+        showSection('assessment-section');
+      }
+
+      // Stubs — implemented in later tasks
+      function renderRecommendation() {}
+      function renderQuestion() {}
+      let currentQuestionIndex = 0;
 
       document.addEventListener('DOMContentLoaded', boot);
     </script>
