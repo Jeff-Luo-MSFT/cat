@@ -1060,6 +1060,44 @@
           padding: 24px;
         }
       }
+
+      /* Progress Bar */
+      .progress-bar {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 13px;
+      }
+      .progress-step {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        color: hsl(var(--muted-foreground));
+        font-weight: 500;
+      }
+      .progress-step.active {
+        color: hsl(var(--primary));
+      }
+      .progress-step.complete {
+        color: hsl(var(--muted-foreground));
+      }
+      .progress-dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: hsl(var(--border));
+      }
+      .progress-step.active .progress-dot {
+        background: hsl(var(--primary));
+      }
+      .progress-step.complete .progress-dot {
+        background: hsl(var(--muted-foreground));
+      }
+      .progress-connector {
+        width: 32px;
+        height: 2px;
+        background: hsl(var(--border));
+      }
     </style>
   </head>
   <body>
@@ -1129,7 +1167,28 @@
       }
 
       function updateProgressBar(sectionId) {
-        // stub — implemented in Task 2
+        const steps = ['Welcome', 'Assessment', 'Recommendation'];
+        const activeIndex = {
+          'loading-section': 0,
+          'error-section': 0,
+          'welcome-section': 0,
+          'prescreen-section': 0,
+          'assessment-section': 1,
+          'recommendation-section': 2,
+        }[sectionId] ?? 0;
+
+        const bar = document.getElementById('progress-bar');
+        bar.className = 'progress-bar';
+        bar.innerHTML = steps.map((label, i) => {
+          const cls = i < activeIndex ? 'complete' : i === activeIndex ? 'active' : '';
+          const connector = i < steps.length - 1
+            ? `<div class="progress-connector"></div>` : '';
+          return `
+            <div class="progress-step ${cls}">
+              <div class="progress-dot"></div>
+              <span>${label}</span>
+            </div>${connector}`;
+        }).join('');
       }
 
       // === BOOT ===
