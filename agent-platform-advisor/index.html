@@ -1257,6 +1257,89 @@
         }).join('');
       }
 
+      // === SCORING ENGINE ===
+      const HARD_RULES = {
+        q4d: { zero: ['agent_builder', 'm365_copilot'] },
+        q5d: { zero: ['agent_builder', 'm365_copilot', 'copilot_studio'] },
+        q6c: { zero: ['agent_builder', 'm365_copilot'] },
+        q8b: { zero: ['agent_builder', 'm365_copilot'] },
+        q8c: { zero: ['agent_builder', 'm365_copilot'] },
+      };
+
+      // Returns { platformId: true } for each platform that must be zeroed
+      function getZeroedPlatforms(answersMap) {
+        const zeroed = {};
+        Object.values(answersMap).forEach(optionId => {
+          if (HARD_RULES[optionId]) {
+            HARD_RULES[optionId].zero.forEach(p => { zeroed[p] = true; });
+          }
+        });
+        return zeroed;
+      }
+
+      // Returns { platformId: number } raw totals before tiebreaker
+      function sumRawScores(answersMap, questions, zeroed) {
+        const platformIds = apa.meta.platforms.map(p => p.id);
+        const totals = Object.fromEntries(platformIds.map(id => [id, 0]));
+
+        questions.forEach(q => {
+          const selectedOptionId = answersMap[q.id];
+          if (!selectedOptionId) return;
+          const option = q.options.find(o => o.id === selectedOptionId);
+          if (!option) return;
+          platformIds.forEach(pid => {
+            const base = option.scores[pid] ?? 0;
+            totals[pid] += zeroed[pid] ? 0 : base;
+          });
+        });
+
+        return totals;
+      }
+
+      // Applies 1.5x weight to Q7 if top two scores are within threshold.
+      // Returns new scores object (or same object if tiebreaker not needed).
+      function applyTiebreaker(scores, answersMap, questions, tbConfig) {
+        const vals = Object.values(scores).sort((a, b) => b - a);
+        if (vals[0] - vals[1] > tbConfig.applies_when_top_two_within) return scores;
+
+        // Q7 not answered (early exit path) — skip tiebreaker
+        if (!answersMap[tbConfig.question_id]) return scores;
+
+        const q7 = questions.find(q => q.id === tbConfig.question_id);
+        if (!q7) return scores;
+        const selectedOpt = q7.options.find(o => o.id === answersMap[tbConfig.question_id]);
+        if (!selectedOpt) return scores;
+
+        const boosted = { ...scores };
+        apa.meta.platforms.forEach(p => {
+          boosted[p.id] = scores[p.id] + (selectedOpt.scores[p.id] ?? 0) * (tbConfig.weight_multiplier - 1);
+        });
+        return boosted;
+      }
+
+      function getThresholdLabel(score, thresholds) {
+        const rounded = Math.round(score);
+        const t = thresholds.find(t => rounded >= t.min && rounded <= t.max);
+        return t ? t.label : 'Not recommended';
+      }
+
+      // Returns platforms sorted by final score descending: [{id, score, label}, ...]
+      function rankPlatforms(answersMap) {
+        const zeroed = getZeroedPlatforms(answersMap);
+        const questions = apa.questions.filter(q => answersMap[q.id]); // only answered
+        const raw = sumRawScores(answersMap, questions, zeroed);
+        const tbConfig = apa.scoring.tiebreaker;
+        const final = applyTiebreaker(raw, answersMap, apa.questions, tbConfig);
+
+        return apa.meta.platforms
+          .map(p => ({
+            id: p.id,
+            score: Math.round(final[p.id]),
+            label: getThresholdLabel(final[p.id], apa.scoring.recommendation_thresholds),
+          }))
+          .sort((a, b) => b.score - a.score);
+      }
+
       // === BOOT ===
       async function boot() {
         showSection('loading-section');
