@@ -1352,15 +1352,10 @@
       function getKeyFactors(platformId, answersMap) {
         const factors = [];
 
-        // 1. Hard rules that affected this platform
+        // 1. Hard rules that zeroed this platform
         Object.entries(answersMap).forEach(([, optionId]) => {
-          const rule = HARD_RULES[optionId];
-          if (rule && rule.zero.includes(platformId)) {
-            // This platform was zeroed by a hard rule — surface it as a caution
+          if (HARD_RULES[optionId] && HARD_RULES[optionId].zero.includes(platformId)) {
             factors.push(`⚠️ ${HARD_RULE_LABELS[optionId]}`);
-          } else if (HARD_RULES[optionId] && !HARD_RULES[optionId].zero.includes(platformId)) {
-            // A hard rule fired that didn't zero this platform — still worth noting
-            factors.push(`✅ ${HARD_RULE_LABELS[optionId]}`);
           }
         });
 
@@ -1372,9 +1367,7 @@
           const option = q.options.find(o => o.id === optionId);
           if (!option) return;
           const score = option.scores[platformId] ?? 0;
-          if (score >= 2) { // only surface strong signals
-            contributions.push({ questionLabel: q.label, optionLabel: option.label, score });
-          }
+          contributions.push({ questionLabel: q.label, optionLabel: option.label, score });
         });
         contributions.sort((a, b) => b.score - a.score);
         contributions.slice(0, 3 - factors.length).forEach(c => {
