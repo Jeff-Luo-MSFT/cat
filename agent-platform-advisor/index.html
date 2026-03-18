@@ -1348,18 +1348,18 @@
         q8c: 'Mixed audience (internal + external) — Agent Builder and M365 Copilot cannot publish externally',
       };
 
-      // Returns array of up to 3 bullet strings explaining why platformId ranked well
+      // Returns up to 3 bullet strings summarising key scoring factors (or disqualifying rules) for the given platform
       function getKeyFactors(platformId, answersMap) {
         const factors = [];
 
         // 1. Hard rules that zeroed this platform
         Object.entries(answersMap).forEach(([, optionId]) => {
           if (HARD_RULES[optionId] && HARD_RULES[optionId].zero.includes(platformId)) {
-            factors.push(`⚠️ ${HARD_RULE_LABELS[optionId]}`);
+            factors.push(`⚠️ ${HARD_RULE_LABELS[optionId] ?? optionId}`);
           }
         });
 
-        // 2. Top-scoring questions for this platform (highest contribution first)
+        // 2. Top-scoring questions for this platform (highest contribution first; skip zero-score answers)
         const contributions = [];
         apa.questions.forEach(q => {
           const optionId = answersMap[q.id];
@@ -1367,7 +1367,9 @@
           const option = q.options.find(o => o.id === optionId);
           if (!option) return;
           const score = option.scores[platformId] ?? 0;
-          contributions.push({ questionLabel: q.label, optionLabel: option.label, score });
+          if (score > 0) {
+            contributions.push({ questionLabel: q.label, optionLabel: option.label, score });
+          }
         });
         contributions.sort((a, b) => b.score - a.score);
         contributions.slice(0, 3 - factors.length).forEach(c => {
