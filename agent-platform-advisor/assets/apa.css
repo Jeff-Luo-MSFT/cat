@@ -90,8 +90,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-weight: bold;
-  font-size: 18px;
+  flex-shrink: 0;
 }
 
 .logo-text {
