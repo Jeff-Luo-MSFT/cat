@@ -58,6 +58,9 @@ function getZeroedPlatforms(answersMap) {
       HARD_RULES[optionId].zero.forEach(p => { zeroed[p] = true; });
     }
   });
+  // Prescreen "No — I need a custom agent" excludes M365 Copilot from the full assessment.
+  // M365 Copilot is only appropriate when the user explicitly wants a built-in experience.
+  if (!fastTrack) zeroed['m365_copilot'] = true;
   return zeroed;
 }
 
