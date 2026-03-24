@@ -232,10 +232,10 @@ function buildPlatformCard(platformId, ranked, answersMap, isPrimary, showBadge)
       ${factorsHtml}
       <div class="rec-section-title">Best for</div>
       <ul class="rec-list">${bestFor}</ul>
-      ${firstPartyHtml}
-      ${templatesHtml}
       <div class="rec-section-title">Watch out for</div>
       <ul class="rec-list">${watchOut}</ul>
+      ${firstPartyHtml}
+      ${templatesHtml}
     </div>`;
 }
 
