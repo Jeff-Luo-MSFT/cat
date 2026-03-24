@@ -10,7 +10,7 @@
 meta:
   version: "1.0"
   scale_max: 3
-  questions_count: 7
+  questions_count: 6
   platforms:
     - id: agent_builder
       label: Agent Builder
@@ -224,47 +224,6 @@ questions:
           foundry: 3
         hard_rule_trigger: true
 
-  - id: q7
-    label: What platforms does your organization already use?
-    purpose: Tiebreaker when top two scores are within 2 points
-    prompt: Existing tools, licenses, and skills often make one platform a more practical starting point than another.
-    tiebreaker:
-      applies_when:
-        top_two_scores_within_points: 2
-      weight_multiplier: 1.5
-    options:
-      - id: q7a
-        label: Primarily Microsoft 365 and Teams — little or no Azure footprint
-        scores:
-          agent_builder: 3
-          m365_copilot: 3
-          copilot_studio: 2
-          foundry: 0
-
-      - id: q7b
-        label: Power Platform is already in use — Power Automate, Power Apps, or Dataverse
-        scores:
-          agent_builder: 1
-          m365_copilot: 1
-          copilot_studio: 3
-          foundry: 1
-
-      - id: q7c
-        label: Significant Azure investment — Azure AI, OpenAI Service, or Azure infrastructure
-        scores:
-          agent_builder: 0
-          m365_copilot: 0
-          copilot_studio: 2
-          foundry: 3
-
-      - id: q7d
-        label: Starting fresh — no strong commitment to a specific platform yet
-        scores:
-          agent_builder: 1
-          m365_copilot: 1
-          copilot_studio: 2
-          foundry: 2
-
   - id: q8
     label: Who will use this agent?
     purpose: External-facing is a hard constraint that affects platform eligibility
@@ -322,15 +281,9 @@ scoring:
   hard_rule_evaluation: pre_sum
 
   # Step 2 — Sum raw scores across all answered questions.
-  raw_score_max: 21  # 7 questions × max score of 3
+  raw_score_max: 18  # 6 questions × max score of 3
 
-  # Step 3 — Apply tiebreaker weight if top two are within threshold.
-  tiebreaker:
-    question_id: q7
-    applies_when_top_two_within: 2
-    weight_multiplier: 1.5
-
-  # Step 4 — Map final scores to recommendation strength.
+  # Step 3 — Map raw scores to recommendation strength.
   recommendation_thresholds:
     - min: 18
       max: 24

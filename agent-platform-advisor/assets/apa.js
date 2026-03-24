@@ -84,27 +84,6 @@ function sumRawScores(answersMap, questions, zeroed) {
   return totals;
 }
 
-// Applies 1.5x weight to Q7 if top two scores are within threshold.
-// Returns new scores object (or same object if tiebreaker not needed).
-function applyTiebreaker(scores, answersMap, questions, tbConfig) {
-  const vals = Object.values(scores).sort((a, b) => b - a);
-  if (vals[0] - vals[1] > tbConfig.applies_when_top_two_within) return scores;
-
-  // Q7 not answered (early exit path) — skip tiebreaker
-  if (!answersMap[tbConfig.question_id]) return scores;
-
-  const q7 = questions.find(q => q.id === tbConfig.question_id);
-  if (!q7) return scores;
-  const selectedOpt = q7.options.find(o => o.id === answersMap[tbConfig.question_id]);
-  if (!selectedOpt) return scores;
-
-  const boosted = { ...scores };
-  apa.meta.platforms.forEach(p => {
-    boosted[p.id] = scores[p.id] + (selectedOpt.scores[p.id] ?? 0) * (tbConfig.weight_multiplier - 1);
-  });
-  return boosted;
-}
-
 function getThresholdLabel(score, thresholds) {
   const rounded = Math.round(score);
   const t = thresholds.find(t => rounded >= t.min && rounded <= t.max);
@@ -115,9 +94,7 @@ function getThresholdLabel(score, thresholds) {
 function rankPlatforms(answersMap) {
   const zeroed = getZeroedPlatforms(answersMap);
   const questions = apa.questions.filter(q => answersMap[q.id]); // only answered
-  const raw = sumRawScores(answersMap, questions, zeroed);
-  const tbConfig = apa.scoring.tiebreaker;
-  const final = applyTiebreaker(raw, answersMap, apa.questions, tbConfig);
+  const final = sumRawScores(answersMap, questions, zeroed);
 
   return apa.meta.platforms
     .map(p => ({
