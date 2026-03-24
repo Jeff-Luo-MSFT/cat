@@ -1032,6 +1032,8 @@ body {
   align-items: center;
   gap: 8px;
   font-size: 13px;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 /* Progress bar steps — overrides the v1 .progress-step rule above */
 .progress-step {
