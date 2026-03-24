@@ -324,8 +324,8 @@ function renderQuestion() {
 
   document.getElementById('question-counter').textContent =
     `Question ${currentQuestionIndex + 1} of ${total}`;
-  document.getElementById('question-title').textContent = question.prompt;
-  document.getElementById('question-subtitle').textContent = question.purpose || '';
+  document.getElementById('question-title').textContent = question.label;
+  document.getElementById('question-subtitle').textContent = question.prompt || '';
 
   const optionsList = document.getElementById('options-list');
   optionsList.innerHTML = '';
