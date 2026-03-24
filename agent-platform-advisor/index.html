@@ -188,6 +188,35 @@
                 <button class="btn btn-ghost" id="back-to-recommendation">
                   <span class="icon icon-chevron-left"></span> Back to Recommendation
                 </button>
+                <button class="btn btn-primary" id="view-implementation">
+                  View Implementation Guide <span class="icon icon-chevron-right"></span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="implementation-section" class="fade-in hidden">
+          <div class="card">
+            <div class="card-content">
+              <h2 class="structure-title" id="implementation-title">Implementation Guide</h2>
+              <div class="checklist-grid">
+                <div class="checklist-section">
+                  <h3 class="checklist-section-title">Pre-Development</h3>
+                  <ul class="checklist-items" id="predev-checklist"></ul>
+                </div>
+                <div class="checklist-section">
+                  <h3 class="checklist-section-title">Post-Development</h3>
+                  <ul class="checklist-items" id="postdev-checklist"></ul>
+                </div>
+              </div>
+              <div class="separator"></div>
+              <div class="center" style="gap:12px;">
+                <button class="btn btn-ghost" id="back-to-structure">
+                  <span class="icon icon-chevron-left"></span> Back to Structure
+                </button>
+                <button class="btn btn-ghost" onclick="restart()">
+                  ↩ Start Over
+                </button>
               </div>
             </div>
           </div>

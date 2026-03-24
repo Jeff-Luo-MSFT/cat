@@ -10,7 +10,7 @@ let structurePlanningData = {};
 // === UTILITIES ===
 function showSection(id) {
   ['loading-section','error-section','welcome-section','prescreen-section',
-   'assessment-section','recommendation-section','structure-section'].forEach(s => {
+   'assessment-section','recommendation-section','structure-section','implementation-section'].forEach(s => {
     const el = document.getElementById(s);
     if (el) el.classList.toggle('hidden', s !== id);
   });
@@ -18,7 +18,7 @@ function showSection(id) {
 }
 
 function updateProgressBar(sectionId) {
-  const steps = ['Welcome', 'Assessment', 'Recommendation', 'Structure'];
+  const steps = ['Welcome', 'Assessment', 'Recommendation', 'Structure', 'Implementation'];
   const activeIndex = {
     'loading-section': 0,
     'error-section': 0,
@@ -27,6 +27,7 @@ function updateProgressBar(sectionId) {
     'assessment-section': 1,
     'recommendation-section': 2,
     'structure-section': 3,
+    'implementation-section': 4,
   }[sectionId] ?? 0;
 
   const bar = document.getElementById('progress-bar');
@@ -336,6 +337,31 @@ function updateStructureData(element) {
   }
 }
 
+function renderImplementation() {
+  const guide = apa.implementation && apa.implementation[recommendedPlatformId];
+  if (!guide) return;
+
+  const rec = apa.recommendations[recommendedPlatformId];
+  if (rec) {
+    document.getElementById('implementation-title').textContent =
+      `${rec.headline} — Implementation Guide`;
+  }
+
+  function fillList(id, items) {
+    const ul = document.getElementById(id);
+    ul.innerHTML = items.map((item, i) => `
+      <li class="checklist-item">
+        <label style="display:flex;align-items:flex-start;gap:10px;cursor:pointer">
+          <input type="checkbox" class="checkbox" id="${id}-${i}" style="margin-top:2px;flex-shrink:0">
+          <span class="checklist-item-text">${item}</span>
+        </label>
+      </li>`).join('');
+  }
+
+  fillList('predev-checklist', guide.predev || []);
+  fillList('postdev-checklist', guide.postdev || []);
+}
+
 // === BOOT ===
 async function boot() {
   showSection('loading-section');
@@ -367,6 +393,13 @@ function setupListeners() {
   });
   document.getElementById('back-to-recommendation').addEventListener('click', () => {
     showSection('recommendation-section');
+  });
+  document.getElementById('view-implementation').addEventListener('click', () => {
+    renderImplementation();
+    showSection('implementation-section');
+  });
+  document.getElementById('back-to-structure').addEventListener('click', () => {
+    showSection('structure-section');
   });
 }
 

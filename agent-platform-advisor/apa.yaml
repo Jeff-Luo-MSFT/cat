@@ -590,7 +590,7 @@ structures:
             description: Decide between end-user authentication (Copilot auth) vs. agent/service authentication, list access controls, role-based permissions, and auditing needs
 
   foundry:
-    title: AI Foundry Agent Structure
+    title: Microsoft Foundry Agent Structure
     sections:
       - title: AI & ML Components
         icon: cpu
@@ -630,3 +630,68 @@ structures:
             icon: refresh
             color: "#a855f7"
             description: Establish MLOps workflows for continuous integration and deployment
+
+################################################################################
+# IMPLEMENTATION GUIDE
+################################################################################
+
+implementation:
+
+  m365_copilot:
+    predev:
+      - Verify Microsoft 365 Copilot licensing for all target users
+      - Identify which 1st-party agents match your use case (Sales, Finance, HR, etc.)
+      - Review data access permissions and Microsoft Graph connectivity
+      - Enable Bing integration if web search capabilities are needed
+      - Configure approved SharePoint sites and data sources for specialized agents
+      - Plan user onboarding and training for Office app and specialized agent integration
+    postdev:
+      - Monitor Copilot and specialized agent usage analytics within Microsoft 365 admin center
+      - Track adoption of specific 1st-party agents (Sales, Service, Finance, HR, etc.)
+      - Collect user feedback on productivity improvements across specialized agents
+      - Ensure data governance policies are being followed for all agent types
+      - Provide ongoing support for users learning Copilot and specialized agent features
+
+  agent_builder:
+    predev:
+      - Define organizational knowledge sources and FAQ content
+      - Identify internal SharePoint libraries and document sources
+      - Plan Graph Connector setup for external knowledge bases
+      - Design simple conversation flows for company-specific queries
+      - Configure permissions for organizational data access
+    postdev:
+      - Deploy agent capabilities within Copilot Chat experience
+      - Monitor organizational query patterns and response accuracy
+      - Update knowledge sources and refine agent responses
+      - Measure user satisfaction with company-specific AI assistance
+      - Scale to additional departments based on success metrics
+
+  copilot_studio:
+    predev:
+      - Map out conversational flows and user journey scenarios
+      - Identify required connectors (from 1400+ available)
+      - Design agent personality, tone, and response patterns
+      - Plan integration with Dataverse, APIs, and business systems
+      - Set up environments and align with admin, compliance, and security policies
+      - Validate monitoring, logging, licensing, and integration requirements before deployment
+      - Get approval from governance leads if sensitive data is involved
+    postdev:
+      - Deploy to Teams, SharePoint, or web channels as planned
+      - Implement comprehensive analytics and conversation tracking
+      - Monitor connector performance and system integrations
+      - Continuously optimize conversation flows based on user interactions
+      - Plan expansion to additional channels and use cases
+
+  foundry:
+    predev:
+      - Design AI architecture including RAG, custom models, and data pipelines
+      - Plan Azure infrastructure, compute resources, and cost management
+      - Architect data integration patterns for enterprise systems
+      - Establish MLOps pipelines for model training and deployment
+      - Create comprehensive security, monitoring, and governance frameworks
+    postdev:
+      - Deploy to production with full observability and alerting
+      - Implement model performance monitoring and retraining pipelines
+      - Establish CI/CD for continuous integration and deployment
+      - Monitor costs, performance metrics, and resource utilization
+      - Maintain model accuracy and implement feedback loops for improvement
