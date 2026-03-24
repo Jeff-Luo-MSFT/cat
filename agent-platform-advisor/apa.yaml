@@ -437,6 +437,19 @@ recommendations:
       - Tenant-scoped — no external user access
       - Limited customization compared to Copilot Studio
       - Not suited for complex multi-step workflows
+    first_party_agents:
+      - label: Copilot for Sales
+        description: Seller productivity in Teams, Outlook, and CRM apps
+      - label: Copilot for Service
+        description: Customer service agent assistance across support channels
+      - label: Copilot for Finance
+        description: Financial workflows, analysis, and reconciliation in Excel and Outlook
+      - label: Employee Self-Service Agent
+        description: HR and IT self-service within Teams for policies, FAQs, and requests
+      - label: SharePoint Agent
+        description: Q&A grounded in a specific SharePoint site or document library
+      - label: Facilitator Agent
+        description: Meeting facilitation, real-time notes, and action items in Teams
 
   copilot_studio:
     headline: Copilot Studio

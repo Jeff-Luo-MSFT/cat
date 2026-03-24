@@ -202,6 +202,10 @@ function buildPlatformCard(platformId, ranked, answersMap, isPrimary, showBadge)
 
   const bestFor = (rec.best_for || []).map(f => `<li>${f}</li>`).join('');
   const watchOut = (rec.watch_out_for || []).map(f => `<li>${f}</li>`).join('');
+  const firstPartyHtml = (rec.first_party_agents || []).length > 0 ? `
+    <div class="rec-section-title">Available 1st Party Copilot Agents</div>
+    <ul class="rec-list">${rec.first_party_agents.map(a =>
+      `<li><strong>${a.label}</strong> — ${a.description}</li>`).join('')}</ul>` : '';
 
   return `
     <div class="rec-card ${isPrimary ? 'primary' : 'secondary'}">
@@ -215,6 +219,7 @@ function buildPlatformCard(platformId, ranked, answersMap, isPrimary, showBadge)
       ${factorsHtml}
       <div class="rec-section-title">Best for</div>
       <ul class="rec-list">${bestFor}</ul>
+      ${firstPartyHtml}
       <div class="rec-section-title">Watch out for</div>
       <ul class="rec-list">${watchOut}</ul>
     </div>`;
