@@ -103,14 +103,14 @@
           <img src="../images/m365-copilot-logo.png" alt="Microsoft 365 Copilot" style="width:32px;height:32px;">
         </div>
         <h3 class="platform-preview-title">Microsoft 365 Copilot</h3>
-        <p class="platform-preview-desc">Ready-to-use productivity AI and specialized agents built into Teams, Outlook, and SharePoint — no building required</p>
+        <p class="platform-preview-desc">Ready-to-use productivity AI and specialized agents built into Teams, Outlook, and SharePoint</p>
       </div>
       <div class="platform-preview">
         <div class="platform-preview-icon">
           <img src="../images/copilot.png" alt="Agent Builder" style="width:32px;height:32px;">
         </div>
         <h3 class="platform-preview-title">Agent Builder</h3>
-        <p class="platform-preview-desc">Build no-code agents in minutes, grounded in your M365 content, for personal or team use inside Microsoft 365</p>
+        <p class="platform-preview-desc">Build no-code agents in minutes, grounded in your Microsoft 365 content, for personal or team use inside Microsoft 365</p>
       </div>
       <div class="platform-preview">
         <div class="platform-preview-icon">
@@ -135,7 +135,7 @@
         <div id="prescreen-section" class="fade-in hidden"><div class="card">
   <div class="card-content" style="padding: 48px 32px;">
     <h2 style="font-size:24px; font-weight:600; margin-bottom:8px;">
-      Quick question before we start
+      Where do you want to start?
     </h2>
     <p style="color:var(--muted-foreground); margin-bottom:32px;">
       This helps us tailor the recommendation for you.
@@ -144,7 +144,7 @@
       <div class="option-card" id="prescreen-yes" style="cursor:pointer;" onclick="handlePrescreenYes()">
         <div class="option-content">
           <div class="option-label">
-            ✅ Yes — I want a built-in Microsoft 365 Copilot experience
+            I want a built-in Microsoft 365 Copilot experience
           </div>
           <div class="option-description">
             I'm looking for what's available out of the box within Microsoft 365
@@ -154,7 +154,7 @@
       <div class="option-card" id="prescreen-no" style="cursor:pointer;" onclick="handlePrescreenNo()">
         <div class="option-content">
           <div class="option-label">
-            🔧 No — I need a custom agent with specific requirements
+            I need a custom agent with specific requirements
           </div>
           <div class="option-description">
             I want to evaluate all platform options based on my scenario
@@ -199,54 +199,6 @@
             <button class="btn btn-ghost" onclick="restart()">
               ↩ Start Over
             </button>
-            <button class="btn btn-primary" id="view-structure">
-              Plan Agent Structure <span class="icon icon-chevron-right"></span>
-            </button>
-          </div>
-        </div>
-        <div id="structure-section" class="fade-in hidden">
-          <div class="card">
-            <div class="card-content">
-              <h2 class="structure-title">Agent Structure Planning</h2>
-              <div id="platform-specific-structure">
-                <!-- Platform-specific content will be dynamically inserted here -->
-              </div>
-              <div class="separator"></div>
-              <div class="center" style="gap:12px;">
-                <button class="btn btn-ghost" id="back-to-recommendation">
-                  <span class="icon icon-chevron-left"></span> Back to Recommendation
-                </button>
-                <button class="btn btn-primary" id="view-implementation">
-                  View Implementation Guide <span class="icon icon-chevron-right"></span>
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div id="implementation-section" class="fade-in hidden">
-          <div class="card">
-            <div class="card-content">
-              <h2 class="structure-title" id="implementation-title">Implementation Guide</h2>
-              <div class="checklist-grid">
-                <div class="checklist-section">
-                  <h3 class="checklist-section-title">Pre-Development</h3>
-                  <ul class="checklist-items" id="predev-checklist"></ul>
-                </div>
-                <div class="checklist-section">
-                  <h3 class="checklist-section-title">Post-Development</h3>
-                  <ul class="checklist-items" id="postdev-checklist"></ul>
-                </div>
-              </div>
-              <div class="separator"></div>
-              <div class="center" style="gap:12px;">
-                <button class="btn btn-ghost" id="back-to-structure">
-                  <span class="icon icon-chevron-left"></span> Back to Structure
-                </button>
-                <button class="btn btn-ghost" onclick="restart()">
-                  ↩ Start Over
-                </button>
-              </div>
-            </div>
           </div>
         </div>
       </div>

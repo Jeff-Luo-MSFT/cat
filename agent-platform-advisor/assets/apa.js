@@ -5,12 +5,11 @@ let fastTrack = false;
 let currentQuestionIndex = 0;
 let listenersReady = false;
 let recommendedPlatformId = null;
-let structurePlanningData = {};
 
 // === UTILITIES ===
 function showSection(id) {
   ['loading-section','error-section','welcome-section','prescreen-section',
-   'assessment-section','recommendation-section','structure-section','implementation-section'].forEach(s => {
+   'assessment-section','recommendation-section'].forEach(s => {
     const el = document.getElementById(s);
     if (el) el.classList.toggle('hidden', s !== id);
   });
@@ -18,7 +17,7 @@ function showSection(id) {
 }
 
 function updateProgressBar(sectionId) {
-  const steps = ['Welcome', 'Assessment', 'Recommendation', 'Structure', 'Implementation'];
+  const steps = ['Welcome', 'Assessment', 'Recommendation'];
   const activeIndex = {
     'loading-section': 0,
     'error-section': 0,
@@ -26,8 +25,6 @@ function updateProgressBar(sectionId) {
     'prescreen-section': 0,
     'assessment-section': 1,
     'recommendation-section': 2,
-    'structure-section': 3,
-    'implementation-section': 4,
   }[sectionId] ?? 0;
 
   const bar = document.getElementById('progress-bar');
@@ -279,108 +276,6 @@ function getIcon(name, size = 16) {
   return `<svg width="${size}" height="${size}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;flex-shrink:0">${paths}</svg>`;
 }
 
-function renderStructure() {
-  const structure = apa.structures && apa.structures[recommendedPlatformId];
-  if (!structure) return;
-
-  document.querySelector('.structure-title').textContent = structure.title;
-
-  const container = document.getElementById('platform-specific-structure');
-  container.innerHTML = '';
-
-  structure.sections.forEach(section => {
-    const sectionDiv = document.createElement('div');
-    sectionDiv.className = 'structure-section';
-    const sectionKey = section.title.replace(/\s+/g, '-').toLowerCase();
-    sectionDiv.innerHTML = `
-      <h3 class="structure-section-title">${getIcon(section.icon, 18)} ${section.title}</h3>
-      <div class="component-grid">
-        ${section.components.map((c, i) => `
-          <div class="component-card">
-            <h4 class="component-title"><span style="color:${c.color};display:inline-flex">${getIcon(c.icon, 16)}</span> ${c.title}</h4>
-            <p class="component-description">${c.description}</p>
-            <div class="component-controls">
-              <div class="component-checkbox">
-                <input type="checkbox" id="comp-${sectionKey}-${i}"
-                  data-section="${section.title}" data-component="${c.title}"
-                  onchange="updateStructureData(this)">
-                <label for="comp-${sectionKey}-${i}">Include in plan</label>
-              </div>
-              <textarea class="component-textarea"
-                placeholder="Notes, decisions, requirements…"
-                data-section="${section.title}" data-component="${c.title}"
-                onchange="updateStructureData(this)"></textarea>
-            </div>
-          </div>`).join('')}
-        <div class="component-card">
-          <h4 class="component-title"><span style="color:#6b7280;display:inline-flex">${getIcon('pencil', 16)}</span> Other</h4>
-          <p class="component-description">Add your own custom component for this section</p>
-          <div class="component-controls">
-            <div class="component-checkbox">
-              <input type="checkbox" id="comp-${sectionKey}-other"
-                data-section="${section.title}" data-component="Other"
-                onchange="updateStructureData(this)">
-              <label for="comp-${sectionKey}-other">Include in plan</label>
-            </div>
-            <input type="text" class="component-text-input"
-              placeholder="Enter your custom component name..."
-              data-section="${section.title}" data-component="Other" data-field="customName"
-              onchange="updateStructureData(this)">
-            <textarea class="component-textarea"
-              placeholder="Notes, decisions, requirements…"
-              data-section="${section.title}" data-component="Other" data-field="notes"
-              onchange="updateStructureData(this)"></textarea>
-          </div>
-        </div>
-      </div>`;
-    container.appendChild(sectionDiv);
-  });
-}
-
-function updateStructureData(element) {
-  const section = element.getAttribute('data-section');
-  const component = element.getAttribute('data-component');
-  const field = element.getAttribute('data-field');
-
-  if (!structurePlanningData[section]) structurePlanningData[section] = {};
-  if (!structurePlanningData[section][component]) {
-    structurePlanningData[section][component] = { selected: false, notes: '', customName: '' };
-  }
-
-  if (element.type === 'checkbox') {
-    structurePlanningData[section][component].selected = element.checked;
-  } else if (element.tagName === 'TEXTAREA') {
-    structurePlanningData[section][component].notes = element.value;
-  } else if (element.type === 'text' && field === 'customName') {
-    structurePlanningData[section][component].customName = element.value;
-  }
-}
-
-function renderImplementation() {
-  const guide = apa.implementation && apa.implementation[recommendedPlatformId];
-  if (!guide) return;
-
-  const rec = apa.recommendations[recommendedPlatformId];
-  if (rec) {
-    document.getElementById('implementation-title').textContent =
-      `${rec.headline} — Implementation Guide`;
-  }
-
-  function fillList(id, items) {
-    const ul = document.getElementById(id);
-    ul.innerHTML = items.map((item, i) => `
-      <li class="checklist-item">
-        <label style="display:flex;align-items:flex-start;gap:10px;cursor:pointer">
-          <input type="checkbox" class="checkbox" id="${id}-${i}" style="margin-top:2px;flex-shrink:0">
-          <span class="checklist-item-text">${item}</span>
-        </label>
-      </li>`).join('');
-  }
-
-  fillList('predev-checklist', guide.predev || []);
-  fillList('postdev-checklist', guide.postdev || []);
-}
-
 // === BOOT ===
 async function boot() {
   showSection('loading-section');
@@ -406,20 +301,6 @@ function setupListeners() {
   });
   document.getElementById('next-btn').addEventListener('click', handleNext);
   document.getElementById('prev-btn').addEventListener('click', handlePrev);
-  document.getElementById('view-structure').addEventListener('click', () => {
-    renderStructure();
-    showSection('structure-section');
-  });
-  document.getElementById('back-to-recommendation').addEventListener('click', () => {
-    showSection('recommendation-section');
-  });
-  document.getElementById('view-implementation').addEventListener('click', () => {
-    renderImplementation();
-    showSection('implementation-section');
-  });
-  document.getElementById('back-to-structure').addEventListener('click', () => {
-    showSection('structure-section');
-  });
 }
 
 function handlePrescreenYes() {
@@ -556,7 +437,6 @@ function restart() {
   fastTrack = false;
   currentQuestionIndex = 0;
   recommendedPlatformId = null;
-  structurePlanningData = {};
   showSection('welcome-section');
 }
 
