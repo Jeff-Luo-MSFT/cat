@@ -138,7 +138,7 @@ function getKeyFactors(platformId, answersMap) {
   });
   contributions.sort((a, b) => b.score - a.score);
   contributions.slice(0, 3 - factors.length).forEach(c => {
-    factors.push(`${c.questionLabel}: ${c.optionLabel}`);
+    factors.push(`<em>${c.questionLabel}</em> ${c.optionLabel}`);
   });
 
   return factors.slice(0, 3);
