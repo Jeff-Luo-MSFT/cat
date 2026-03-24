@@ -211,6 +211,15 @@ function buildPlatformCard(platformId, ranked, answersMap, isPrimary, showBadge)
       return `<li><strong>${label}</strong> — ${a.description}</li>`;
     }).join('')}</ul>` : '';
 
+  const templatesHtml = (rec.templates || []).length > 0 ? `
+    <div class="rec-section-title">Available Templates</div>
+    <ul class="rec-list">${rec.templates.map(t => {
+      const label = t.url
+        ? `<a href="${t.url}" target="_blank" rel="noopener noreferrer">${t.label}</a>`
+        : t.label;
+      return `<li><strong>${label}</strong> — ${t.description}</li>`;
+    }).join('')}</ul>` : '';
+
   return `
     <div class="rec-card ${isPrimary ? 'primary' : 'secondary'}">
       <div class="rec-header">
@@ -224,6 +233,7 @@ function buildPlatformCard(platformId, ranked, answersMap, isPrimary, showBadge)
       <div class="rec-section-title">Best for</div>
       <ul class="rec-list">${bestFor}</ul>
       ${firstPartyHtml}
+      ${templatesHtml}
       <div class="rec-section-title">Watch out for</div>
       <ul class="rec-list">${watchOut}</ul>
     </div>`;

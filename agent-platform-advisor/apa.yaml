@@ -423,6 +423,46 @@ recommendations:
       - No external user publishing path
       - Limited to M365 grounding sources
       - Not suitable for custom logic or external system integration
+    templates:
+      - label: Career Coach
+        description: Personalized career development plans, skill gap analysis, and actionable advice
+        url: https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/agent-template-career-coach
+      - label: Corporate Communications Crafter
+        description: On-brand internal and external communications — announcements, newsletters, exec updates
+        url: https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/agent-template-corporate-communications
+      - label: Customer Insight Assistant
+        description: Detailed customer profiles including industry, priorities, leadership, and competitors
+        url: https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/agent-template-customer-insight
+      - label: Idea Coach
+        description: Guided brainstorming sessions with creative exercises to develop and refine ideas
+        url: https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/agent-template-idea-coach
+      - label: Interview Question Assistant
+        description: Tailored, high-quality interview questions based on role and job description
+        url: https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/agent-template-interview-questions
+      - label: Learning Coach
+        description: Structured learning plans and topic summaries tailored to individual knowledge gaps
+        url: https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/agent-template-learning-coach
+      - label: Meeting Coach
+        description: Structured agendas, role assignments, and real-time guidance to run effective meetings
+        url: https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/agent-template-meeting-coach
+      - label: Prompt Coach
+        description: Guides users in crafting well-structured Copilot prompts through interactive feedback
+        url: https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/agent-template-prompt-coach
+      - label: Request for Proposal Assistant
+        description: Generates tailored RFP response drafts from existing proposal content and templates
+        url: https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/agent-template-rfp-assistant
+      - label: Quiz Tutor
+        description: Interactive quizzes based on training content to reinforce learning and knowledge retention
+        url: https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/agent-template-quiz-tutor
+      - label: Scrum Assistant
+        description: Real-time guidance on scrum ceremonies, backlog management, and Agile best practices
+        url: https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/agent-template-scrum-assistant
+      - label: Text Translator Assistant
+        description: Translates text, adjusts tone for professional communication, and improves writing quality
+        url: https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/agent-template-text-translator
+      - label: Writing Coach
+        description: Detailed feedback on clarity, coherence, grammar, and tone to elevate writing quality
+        url: https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/agent-template-writing-coach
 
   m365_copilot:
     headline: M365 Copilot
@@ -440,22 +480,22 @@ recommendations:
     first_party_agents:
       - label: Copilot for Sales
         description: Seller productivity in Teams, Outlook, and CRM apps
-        url: https://learn.microsoft.com/en-us/microsoft-sales-copilot/
+        url: https://learn.microsoft.com/microsoft-sales-copilot/
       - label: Copilot for Service
         description: Customer service agent assistance across support channels
-        url: https://learn.microsoft.com/en-us/microsoft-copilot-service/
+        url: https://learn.microsoft.com/microsoft-copilot-service/
       - label: Copilot for Finance
         description: Financial workflows, analysis, and reconciliation in Excel and Outlook
-        url: https://learn.microsoft.com/en-us/copilot/finance/
+        url: https://learn.microsoft.com/copilot/finance/
       - label: Employee Self-Service Agent
         description: HR and IT self-service within Teams for policies, FAQs, and requests
-        url: https://learn.microsoft.com/en-us/copilot/microsoft-365/employee-self-service/overview
+        url: https://learn.microsoft.com/copilot/microsoft-365/employee-self-service/overview
       - label: SharePoint Agent
         description: Q&A grounded in a specific SharePoint site or document library
-        url: https://support.microsoft.com/en-us/office/get-started-with-sharepoint-agents-69e2faf9-2c1e-4baa-8305-23e625021bcf
+        url: https://support.microsoft.com/office/get-started-with-sharepoint-agents-69e2faf9-2c1e-4baa-8305-23e625021bcf
       - label: Facilitator Agent
         description: Meeting facilitation, real-time notes, and action items in Teams
-        url: https://learn.microsoft.com/en-us/microsoftteams/facilitator-teams
+        url: https://learn.microsoft.com/microsoftteams/facilitator-teams
 
   copilot_studio:
     headline: Copilot Studio
