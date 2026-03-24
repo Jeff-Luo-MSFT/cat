@@ -288,7 +288,7 @@ function renderStructure() {
                 <label for="comp-${sectionKey}-${i}">Include in plan</label>
               </div>
               <textarea class="component-textarea"
-                placeholder="Add implementation notes, decisions, or requirements..."
+                placeholder="Notes, decisions, requirements…"
                 data-section="${section.title}" data-component="${c.title}"
                 onchange="updateStructureData(this)"></textarea>
             </div>
@@ -308,7 +308,7 @@ function renderStructure() {
               data-section="${section.title}" data-component="Other" data-field="customName"
               onchange="updateStructureData(this)">
             <textarea class="component-textarea"
-              placeholder="Add implementation notes, decisions, or requirements..."
+              placeholder="Notes, decisions, requirements…"
               data-section="${section.title}" data-component="Other" data-field="notes"
               onchange="updateStructureData(this)"></textarea>
           </div>
