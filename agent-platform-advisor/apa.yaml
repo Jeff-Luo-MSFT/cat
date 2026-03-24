@@ -440,16 +440,22 @@ recommendations:
     first_party_agents:
       - label: Copilot for Sales
         description: Seller productivity in Teams, Outlook, and CRM apps
+        url: https://learn.microsoft.com/en-us/microsoft-sales-copilot/
       - label: Copilot for Service
         description: Customer service agent assistance across support channels
+        url: https://learn.microsoft.com/en-us/microsoft-copilot-service/
       - label: Copilot for Finance
         description: Financial workflows, analysis, and reconciliation in Excel and Outlook
+        url: https://learn.microsoft.com/en-us/copilot/finance/
       - label: Employee Self-Service Agent
         description: HR and IT self-service within Teams for policies, FAQs, and requests
+        url: https://learn.microsoft.com/en-us/copilot/microsoft-365/employee-self-service/overview
       - label: SharePoint Agent
         description: Q&A grounded in a specific SharePoint site or document library
+        url: https://support.microsoft.com/en-us/office/get-started-with-sharepoint-agents-69e2faf9-2c1e-4baa-8305-23e625021bcf
       - label: Facilitator Agent
         description: Meeting facilitation, real-time notes, and action items in Teams
+        url: https://learn.microsoft.com/en-us/microsoftteams/facilitator-teams
 
   copilot_studio:
     headline: Copilot Studio

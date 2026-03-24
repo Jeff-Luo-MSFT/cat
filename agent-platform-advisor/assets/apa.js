@@ -204,8 +204,12 @@ function buildPlatformCard(platformId, ranked, answersMap, isPrimary, showBadge)
   const watchOut = (rec.watch_out_for || []).map(f => `<li>${f}</li>`).join('');
   const firstPartyHtml = (rec.first_party_agents || []).length > 0 ? `
     <div class="rec-section-title">Available 1st Party Copilot Agents</div>
-    <ul class="rec-list">${rec.first_party_agents.map(a =>
-      `<li><strong>${a.label}</strong> — ${a.description}</li>`).join('')}</ul>` : '';
+    <ul class="rec-list">${rec.first_party_agents.map(a => {
+      const label = a.url
+        ? `<a href="${a.url}" target="_blank" rel="noopener noreferrer">${a.label}</a>`
+        : a.label;
+      return `<li><strong>${label}</strong> — ${a.description}</li>`;
+    }).join('')}</ul>` : '';
 
   return `
     <div class="rec-card ${isPrimary ? 'primary' : 'secondary'}">
