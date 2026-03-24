@@ -426,43 +426,43 @@ recommendations:
     templates:
       - label: Career Coach
         description: Personalized career development plans, skill gap analysis, and actionable advice
-        url: https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/agent-template-career-coach
+        url: https://learn.microsoft.com/microsoft-365/copilot/extensibility/agent-template-career-coach
       - label: Corporate Communications Crafter
         description: On-brand internal and external communications — announcements, newsletters, exec updates
-        url: https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/agent-template-corporate-communications
+        url: https://learn.microsoft.com/microsoft-365/copilot/extensibility/agent-template-corporate-communications
       - label: Customer Insight Assistant
         description: Detailed customer profiles including industry, priorities, leadership, and competitors
-        url: https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/agent-template-customer-insight
+        url: https://learn.microsoft.com/microsoft-365/copilot/extensibility/agent-template-customer-insight
       - label: Idea Coach
         description: Guided brainstorming sessions with creative exercises to develop and refine ideas
-        url: https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/agent-template-idea-coach
+        url: https://learn.microsoft.com/microsoft-365/copilot/extensibility/agent-template-idea-coach
       - label: Interview Question Assistant
         description: Tailored, high-quality interview questions based on role and job description
-        url: https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/agent-template-interview-questions
+        url: https://learn.microsoft.com/microsoft-365/copilot/extensibility/agent-template-interview-questions
       - label: Learning Coach
         description: Structured learning plans and topic summaries tailored to individual knowledge gaps
-        url: https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/agent-template-learning-coach
+        url: https://learn.microsoft.com/microsoft-365/copilot/extensibility/agent-template-learning-coach
       - label: Meeting Coach
         description: Structured agendas, role assignments, and real-time guidance to run effective meetings
-        url: https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/agent-template-meeting-coach
+        url: https://learn.microsoft.com/microsoft-365/copilot/extensibility/agent-template-meeting-coach
       - label: Prompt Coach
         description: Guides users in crafting well-structured Copilot prompts through interactive feedback
-        url: https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/agent-template-prompt-coach
+        url: https://learn.microsoft.com/microsoft-365/copilot/extensibility/agent-template-prompt-coach
       - label: Request for Proposal Assistant
         description: Generates tailored RFP response drafts from existing proposal content and templates
-        url: https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/agent-template-rfp-assistant
+        url: https://learn.microsoft.com/microsoft-365/copilot/extensibility/agent-template-rfp-assistant
       - label: Quiz Tutor
         description: Interactive quizzes based on training content to reinforce learning and knowledge retention
-        url: https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/agent-template-quiz-tutor
+        url: https://learn.microsoft.com/microsoft-365/copilot/extensibility/agent-template-quiz-tutor
       - label: Scrum Assistant
         description: Real-time guidance on scrum ceremonies, backlog management, and Agile best practices
-        url: https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/agent-template-scrum-assistant
+        url: https://learn.microsoft.com/microsoft-365/copilot/extensibility/agent-template-scrum-assistant
       - label: Text Translator Assistant
         description: Translates text, adjusts tone for professional communication, and improves writing quality
-        url: https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/agent-template-text-translator
+        url: https://learn.microsoft.com/microsoft-365/copilot/extensibility/agent-template-text-translator
       - label: Writing Coach
         description: Detailed feedback on clarity, coherence, grammar, and tone to elevate writing quality
-        url: https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/agent-template-writing-coach
+        url: https://learn.microsoft.com/microsoft-365/copilot/extensibility/agent-template-writing-coach
 
   m365_copilot:
     headline: M365 Copilot
@@ -496,6 +496,24 @@ recommendations:
       - label: Facilitator Agent
         description: Meeting facilitation, real-time notes, and action items in Teams
         url: https://learn.microsoft.com/microsoftteams/facilitator-teams
+      - label: Researcher Agent
+        description: Synthesizes information from the web and M365 to produce in-depth research and content
+        url: https://techcommunity.microsoft.com/blog/microsoft365copilotblog/researcher-agent-in-microsoft-365-copilot/4397186
+      - label: Analyst Agent
+        description: Transforms complex data into clear insights, charts, and visualizations using Python
+        url: https://www.microsoft.com/microsoft-365/blog/2025/03/25/introducing-researcher-and-analyst-in-microsoft-365-copilot/
+      - label: Interpreter Agent
+        description: Real-time speech-to-speech interpretation in Teams meetings across nine languages
+        url: https://learn.microsoft.com/microsoftteams/interpreter-agent-teams
+      - label: Project Manager Agent
+        description: Automates project plan creation, task tracking, and status reporting in Planner (preview)
+        url: https://aka.ms/agents/ProjectManagerDocs
+      - label: Channel Agent
+        description: Teams channel expert for summarizing conversations, managing tasks, and boosting productivity (preview)
+        url: https://support.microsoft.com/office/get-started-with-channel-agent-for-teams-channels-b85945cf-deef-4f1e-9db1-66e1a23b6a65
+      - label: Community Agent
+        description: Accelerates knowledge sharing and surfaces expertise across org communities in Viva Engage (preview)
+        url: https://learn.microsoft.com/viva/engage/ai-technology-with-viva-engage/agents-community-network-deployment-config
 
   copilot_studio:
     headline: Copilot Studio
