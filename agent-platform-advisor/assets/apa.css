@@ -443,9 +443,37 @@ body {
   box-shadow: 0 0 0 4px var(--ring-focus);
 }
 
-.option-radio {
-  margin-top: 4px;
-  accent-color: var(--primary);
+.option-radio-indicator {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.option-radio-outer {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 2px solid var(--border);
+  background: var(--card);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 0.15s, background 0.15s;
+}
+
+.option-card.selected .option-radio-outer {
+  border-color: var(--primary);
+  background: var(--primary);
+}
+
+.option-radio-inner {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #fff;
+}
+
+.option-card:hover .option-radio-outer {
+  border-color: var(--primary);
 }
 
 .option-content {

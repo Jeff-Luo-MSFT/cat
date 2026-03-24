@@ -309,7 +309,11 @@ function renderQuestion() {
   question.options.forEach(opt => {
     const div = document.createElement('div');
     div.className = 'option-card' + (answers[question.id] === opt.id ? ' selected' : '');
+    const isSelected = answers[question.id] === opt.id;
     div.innerHTML = `
+      <div class="option-radio-indicator" aria-hidden="true">
+        <div class="option-radio-outer">${isSelected ? '<div class="option-radio-inner"></div>' : ''}</div>
+      </div>
       <div class="option-content">
         <div class="option-label">${opt.label}</div>
       </div>`;
