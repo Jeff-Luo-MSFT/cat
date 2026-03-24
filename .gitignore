@@ -1,2 +1,4 @@
 /.claude
 /.vscode
+.gstack/
+agent-platform-advisor/.claude/settings.local.json
