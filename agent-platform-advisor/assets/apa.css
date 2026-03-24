@@ -612,7 +612,7 @@ body {
 
 /* Implementation Checklist */
 .checklist-title {
-  font-size: 48px;
+  font-size: 28px;
   font-weight: bold;
   margin-bottom: 24px;
   color: var(--foreground);
@@ -677,7 +677,7 @@ body {
 
 /* Agent Structure */
 .structure-title {
-  font-size: 48px;
+  font-size: 28px;
   font-weight: bold;
   margin-bottom: 24px;
   color: var(--foreground);
@@ -1001,10 +1001,13 @@ body {
   }
 
   .question-title,
-  .recommendation-title,
+  .recommendation-title {
+    font-size: 24px;
+  }
+
   .checklist-title,
   .structure-title {
-    font-size: 32px;
+    font-size: 22px;
   }
 
   .platform-grid {
