@@ -149,6 +149,12 @@ body {
   cursor: not-allowed;
 }
 
+.btn:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 4px var(--ring-focus);
+}
+
 .btn-lg {
   padding: 16px 32px;
   font-size: 16px;
@@ -429,6 +435,12 @@ body {
 .option-card.selected {
   border-color: var(--primary);
   background-color: hsl(210, 100%, 97%);
+}
+
+.option-card:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 4px var(--ring-focus);
 }
 
 .option-radio {
