@@ -10,7 +10,7 @@
 meta:
   version: "1.0"
   scale_max: 3
-  questions_count: 8
+  questions_count: 7
   platforms:
     - id: agent_builder
       label: Agent Builder
@@ -224,49 +224,6 @@ questions:
           foundry: 3
         hard_rule_trigger: true
 
-  - id: q6
-    label: Compliance and data handling requirements
-    purpose: Hard compliance needs can force the decision regardless of other answers
-    prompt: What level of compliance or data control does this agent require?
-    hard_rules:
-      - condition: option == q6c
-        effect: >
-          Set foundry = 3. Cap agent_builder and m365_copilot at 0.
-          Present a compliance callout alongside the recommendation.
-    options:
-      - id: q6a
-        label: Standard Microsoft 365 compliance and data boundaries are sufficient
-        scores:
-          agent_builder: 3
-          m365_copilot: 3
-          copilot_studio: 2
-          foundry: 1
-
-      - id: q6b
-        label: Enhanced controls — data residency, audit logging, or sensitivity labels
-        scores:
-          agent_builder: 0
-          m365_copilot: 2
-          copilot_studio: 3
-          foundry: 2
-
-      - id: q6c
-        label: Strict requirements — sovereign cloud, bring-your-own-key, or regulatory mandates (HIPAA, FedRAMP, etc.)
-        scores:
-          agent_builder: 0
-          m365_copilot: 0
-          copilot_studio: 1
-          foundry: 3
-        hard_rule_trigger: true
-
-      - id: q6d
-        label: Unknown — we need to check with our compliance team
-        scores:
-          agent_builder: 1
-          m365_copilot: 1
-          copilot_studio: 2
-          foundry: 2
-
   - id: q7
     label: Existing platform investment
     purpose: Tiebreaker when top two scores are within 2 points
@@ -365,7 +322,7 @@ scoring:
   hard_rule_evaluation: pre_sum
 
   # Step 2 — Sum raw scores across all answered questions.
-  raw_score_max: 24  # 8 questions × max score of 3
+  raw_score_max: 21  # 7 questions × max score of 3
 
   # Step 3 — Apply tiebreaker weight if top two are within threshold.
   tiebreaker:
@@ -398,11 +355,11 @@ scoring:
     present_as: complementary_pair
     valid_pairs:
       - platforms: [copilot_studio, foundry]
-        rationale: Build declaratively in Copilot Studio, extend with custom code in Foundry.
+        rationale: Build in Copilot Studio, extend with custom code in Foundry.
       - platforms: [m365_copilot, copilot_studio]
         rationale: M365 Copilot for end users, Copilot Studio for customization and extension.
       - platforms: [agent_builder, m365_copilot]
-        rationale: Agent Builder for simple M365-native agents, M365 Copilot for broader extensibility.
+        rationale: Agent Builder for M365-native agents, M365 Copilot for broader extensibility.
 
 ################################################################################
 # RECOMMENDATION COPY
