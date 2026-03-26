@@ -133,7 +133,7 @@ sessions:
     presentation_label: "Presentation (PPT)"
 
   - date: "2025-10-15"
-    title: "Real World Stories: Agentic Solutions with Copilot Studio and Power Platform"
+    title: "Real World Agent Case Studies: TMobile, StateFarm, UKG, and PeopleCert"
     description: "Join us for an inspiring and practical session where customers share real-world stories of how they're transforming their organizations using Microsoft Copilot Studio and the Power Platform."
     recording_link: "https://aka.ms/mcs/storytelling"
     presentation_link: "../resources/Storytelling AI Webinars Oct 15 copy.zip"
@@ -208,7 +208,7 @@ sessions:
 
   - date: "2026-01-21"
     time: "9:00 AM PT"
-    title: "Real-World Agent Case Studies"
+    title: "Real World Agent Case Studies: Dunaway and Informatica Alto Adige (SIAG)"
     description: "Join our interactive webinar to hear 2-3 customers share their journey in building agentic solutions that drive real business transformation."
     recording_link: "https://aka.ms/AiWebinar/casestudies"
     presentation_link: "../resources/Customer Storytelling Deck - Dunaway and Informatica - Customer Facing.zip"
@@ -259,20 +259,22 @@ sessions:
 
   - date: "2026-03-04"
     time: "9:00 AM PT"
-    title: "Real-World Agent Case Studies Through Storytelling"
+    title: "Real World Agent Case Studies: Tiendas Cuadra + Algoritmo and Templafy"
     description: "Join this session to learn how Cuadra partnered with Algoritmo to transform their customer service with an AI‑powered agent, and hear from Templafy’s experience as an ISV helping enterprises move AI from experimentation to scalable, governed execution."
     register_link: "https://aka.ms/AIWebinars/CaseStudies2"
-   
+    presentation_link: "../resources/Real World Case Studies through Storytelling_4 March - CUADRA and TEMPLAFY.zip"
+    presentation_label: "Presentation (PPT)"
+
   - date: "2026-03-11"
     time: "9:00 AM PT"
     title: "When Copilot Studio meets Dataverse: Supercharged AI Knowledge"
     description: "Learn how structured data with Dataverse powers smarter AI Agents"
-    register_link: "https://aka.ms/AIWebinars/SuperchargedAIKnowledge"    
+    register_link: "https://aka.ms/AIWebinars/SuperchargedAIKnowledge"
 
   - date: "2026-03-18"
     time: "9:00 AM PT"
     title: "From Prompt to Action: UI Automation with Copilot Studio's Computer Use"
-    description: "In this session, you'll learn how Computer Use Agents (CUA) in Copilot Studio automate any UI using natural language and AI-powered vision." 
+    description: "In this session, you'll learn how Computer Use Agents (CUA) in Copilot Studio automate any UI using natural language and AI-powered vision."
     register_link: "https://aka.ms/AIWebinars/PrompttoAction"
 
   - date: "2026-03-25"
@@ -287,10 +289,16 @@ sessions:
     description: "In this session, we’ll introduce the Agent Evaluation capabilities in Copilot Studio and show how makers and teams can systematically measure, test, and improve agent quality throughout the development lifecycle."
     register_link: "https://aka.ms/aiwebinars/CPSEvaluation"
 
+  - date: "2026-04-01"
+    time: "9:00 AM PT"
+    title: "Organization Success with AI Agents: Real World Case Studies"
+    description: "Join Zones for an inside look at their AI journey, featuring live demos of how they’re scaling Microsoft 365 Copilot and rolling out AI agents across finance and global supply chain operations."
+    register_link: "https://aka.ms/Aiwebinars/CaseStudies4"
+
   - date: "2026-04-08"
     time: "9:00 AM PT"
     title: "Choosing the Right Agent Pattern: Orchestrated, Deterministic, or Hybrid Agents"
-    description: "In this session, you'll learn a practical framework for choosing between orchestrative, deterministic, and hybrid patterns, backed by real-world examples." 
+    description: "In this session, you'll learn a practical framework for choosing between orchestrative, deterministic, and hybrid patterns, backed by real-world examples."
     register_link: "https://aka.ms/AIWebinars/TheRightAgentPattern"
 
   - date: "2026-04-15"
