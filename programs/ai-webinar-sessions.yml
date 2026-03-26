@@ -307,8 +307,14 @@ sessions:
     description: "In this webinar, we will explore practical frameworks for evaluating the ROI and business impact of AI agents."
     register_link: "https://aka.ms/aiwebinars/agentROI"
 
+  - date: "2026-04-15"
+    time: "08:30 PM PT (APAC)"
+    title: "Unlocking the Power of Agent Builder"
+    description: "In this session, we’ll walk through how to quickly build an agent with Agent Builder that’s tailored to your scenario, connect it to the right knowledge (for example, SharePoint content and supported connectors), test it interactively, and share it with others across your organization—so more team members can benefit from focused, trusted Copilot experiences."
+    register_link: "https://aka.ms/AIWebinars/APACAgentBuilder"
+
   - date: "2026-04-22"
     time: "9:00 AM PT"
     title: "Building Enterprise‑Grade Agents with Cloud PC Pools in Copilot Studio"
-    description: "In this session, we will explore how Cloud PC Pools, powered by Windows 365 for Agents, unlock secure, enterprise - ready UI automation inside Microsoft Copilot Studio."
+    description: "In this session, we will explore how Cloud PC Pools, powered by Windows 365 for Agents, unlock secure, enterprise - ready UI automation inside Microsoft Copilot Studio." 
     register_link: "https://aka.ms/AIWebinars/CloudPCPools"
