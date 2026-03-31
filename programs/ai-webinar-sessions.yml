@@ -250,7 +250,7 @@ sessions:
     time: "9:00 AM PT"
     title: "Agent Governance in M365 Admin Center"
     description: "Join us as we dive into Copilot Control Systems in Microsoft 365 Admin Center (MAC), which allows Tenant Administrators to manage and govern Copilot and Agents!"
-    register_link: "https://aka.ms/aiwebinars/m365Governance"
+    recording_link: "https://aka.ms/aiwebinars/m365Governance"
     presentation_link: "../resources/Agent Governance in M365 Admin Center.zip"
     presentation_label: "Presentation (PPT)"
 
@@ -258,7 +258,7 @@ sessions:
     time: "9:00 AM PT"
     title: "Leverage Instructions & Tools to Build Agents"
     description: "Discover the latest components and learn how to use them for greater flexibility than traditional agent-building approaches."
-    register_link: "https://aka.ms/AIWebinars/dynamicAgents"
+    recording_link: "https://aka.ms/AIWebinars/dynamicAgents"
     presentation_link: "../resources/Leveraging Instructions and Tools to Build Dynamic Agents.zip"
     presentation_label: "Presentation (PPT)"
 
@@ -266,7 +266,7 @@ sessions:
     time: "9:00 AM PT"
     title: "Real World Agent Case Studies: Tiendas Cuadra + Algoritmo and Templafy"
     description: "Join this session to learn how Cuadra partnered with Algoritmo to transform their customer service with an AI‑powered agent, and hear from Templafy’s experience as an ISV helping enterprises move AI from experimentation to scalable, governed execution."
-    register_link: "https://aka.ms/AIWebinars/CaseStudies2"
+    recording_link: "https://aka.ms/AIWebinars/CaseStudies3"
     presentation_link: "../resources/Real World Case Studies through Storytelling_4 March - CUADRA and TEMPLAFY.zip"
     presentation_label: "Presentation (PPT)"
 
