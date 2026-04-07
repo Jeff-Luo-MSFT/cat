@@ -318,3 +318,9 @@ sessions:
     title: "Building Enterprise‑Grade Agents with Cloud PC Pools in Copilot Studio"
     description: "In this session, we will explore how Cloud PC Pools, powered by Windows 365 for Agents, unlock secure, enterprise - ready UI automation inside Microsoft Copilot Studio." 
     register_link: "https://aka.ms/AIWebinars/CloudPCPools"
+
+  - date: "2026-04-28"
+    time: "09:00 PM PT (APAC)"
+    title: "Unblocking Agent 365 Security and Governance"
+    description: "In this session, we’ll walk through how Agent 365 (A365) helps you securely build, monitor, and govern agents across your environment—so innovation doesn’t come at the cost of control" 
+    register_link: "https://aka.ms/AIWebinars/APACNextSecondSession"
