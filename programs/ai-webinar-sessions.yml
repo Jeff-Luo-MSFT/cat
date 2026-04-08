@@ -325,10 +325,10 @@ sessions:
     register_link: "https://aka.ms/AIWebinars/CloudPCPools"
 
   - date: "2026-04-28"
-      time: "09:00 PM PT (APAC)"
-      title: "Unblocking Agent 365 Security and Governance"
-      description: "In this session, we’ll walk through how Agent 365 (A365) helps you securely build, monitor, and govern agents across your environment—so innovation doesn’t come at the cost of control" 
-      register_link: "https://aka.ms/AIWebinars/A365APAC2"
+    time: "09:00 PM PT (APAC)"
+    title: "Unblocking Agent 365 Security and Governance"
+    description: "In this session, we’ll walk through how Agent 365 (A365) helps you securely build, monitor, and govern agents across your environment—so innovation doesn’t come at the cost of control" 
+    register_link: "https://aka.ms/AIWebinars/A365APAC2"
 
   - date: "2026-04-29"
     time: "9:00 AM PT"
