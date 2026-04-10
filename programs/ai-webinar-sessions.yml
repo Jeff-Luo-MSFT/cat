@@ -304,6 +304,7 @@ sessions:
     time: "9:00 AM PT"
     title: "Choosing the Right Agent Pattern: Orchestrated, Deterministic, or Hybrid Agents"
     description: "In this session, you'll learn a practical framework for choosing between orchestrative, deterministic, and hybrid patterns, backed by real-world examples."
+    presentation_link: "../resources/Choosing the Right Agent Pattern .pdf"
     register_link: "https://aka.ms/AIWebinars/TheRightAgentPattern"
 
   - date: "2026-04-15"
