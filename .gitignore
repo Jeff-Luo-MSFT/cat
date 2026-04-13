@@ -1,0 +1,5 @@
+.claude/
+.gstack/
+.vscode/
+node_modules/
+test-results/
