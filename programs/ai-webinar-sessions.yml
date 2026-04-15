@@ -312,6 +312,8 @@ sessions:
     title: "Business Value of AI Agents: ROI, Impact, and Real‑World Outcomes"
     description: "In this webinar, we will explore practical frameworks for evaluating the ROI and business impact of AI agents."
     register_link: "https://aka.ms/aiwebinars/agentROI"
+    presentation_link: "../resources/Business Value of AI Agents_ROI, Impact, and Real‑World Outcomes.pdf"
+    presentation_label: "Presentation (PDF)"
 
   - date: "2026-04-15"
     time: "09:30 PM PT (APAC)"
@@ -346,10 +348,11 @@ sessions:
   - date: "2026-05-20"
     time: "9:00 AM PT"
     title: "Accelerate AI Adoption with Microsoft Agent 365"
-    description: "Join this webinar to discover how Microsoft Agent 365 empowers you to scale and secure AI agents across your organization. Learn how to achieve real-time visibility, enforce governance, and extend security and compliance to every agent. Experience seamless integration and gain practical strategies to operationalize AI confidently, reduce risks, and drive business value. Don’t miss your chance to lead your organization into the future of secure, scalable AI adoption! \n Level 200-300" 
+    description: "Join this practical session on using Microsoft Agent 365 to manage AI agents at scale with real-time visibility, governance, and enterprise-grade security and compliance." 
     register_link: "https://aka.ms/AIWebinars/AIAdoptionwAgent365"
 
   - date: "2026-05-27"
     time: "9:00 AM PT"
-    title: "Join this session to learn about the patterns that are used to connect customer‑built AI solutions to Microsoft 365 Copilot in a fast, scalable, and repeatable way. The webinar will introduce the Proxy Agent approach, explaining what it is and how it enables seamless integration between external AI systems and Copilot experiences. You’ll gain a clear, high‑level understanding of the architecture, key components, and authentication concepts involved, along with guidance on how teams typically get started. Designed for both technical and solution‑focused audiences, this session will focus on demystifying the pattern, sharing practical insights from real implementations, and highlighting available assets and resources you can leverage in your own projects." 
+    title: "Connecting Customer-Built AI to Microsoft 365 Copilot: The Proxy Agent Pattern"
+    description: "Join this session to discover the Proxy Agent pattern for connecting customer‑built Agents to Microsoft 365 Copilot." 
     register_link: "https://aka.ms/AIWebinars/ProxyAgentPattern"
