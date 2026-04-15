@@ -336,3 +336,20 @@ sessions:
     title: "AI Agents in Action: Extending Microsoft 365 Copilot with SAP & Adobe"
     description: "Learn about third‑party Copilot agents like SAP Joule and Adobe Marketing Agent for Microsoft 365 Copilot in action, bringing enterprise business insights, marketing intelligence, and automated workflows directly into the tools you use every day." 
     register_link: "https://aka.ms/AIWebinars/3PAgents"
+
+  - date: "2026-05-13"
+    time: "9:00 AM PT"
+    title: "Selecting Agent Integration Patterns in Copilot Studio"
+    description: "This session will help you pick the right integration pattern for your Copilot Studio agent, from no-code embeds to native mobile apps, custom UIs, and server-side connectors." 
+    register_link: "https://aka.ms/AIWebinars/AgentIntegrationPatterns"
+
+  - date: "2026-05-20"
+    time: "9:00 AM PT"
+    title: "Accelerate AI Adoption with Microsoft Agent 365"
+    description: "Join this webinar to discover how Microsoft Agent 365 empowers you to scale and secure AI agents across your organization. Learn how to achieve real-time visibility, enforce governance, and extend security and compliance to every agent. Experience seamless integration and gain practical strategies to operationalize AI confidently, reduce risks, and drive business value. Don’t miss your chance to lead your organization into the future of secure, scalable AI adoption! \n Level 200-300" 
+    register_link: "https://aka.ms/AIWebinars/AIAdoptionwAgent365"
+
+  - date: "2026-05-27"
+    time: "9:00 AM PT"
+    title: "Join this session to learn about the patterns that are used to connect customer‑built AI solutions to Microsoft 365 Copilot in a fast, scalable, and repeatable way. The webinar will introduce the Proxy Agent approach, explaining what it is and how it enables seamless integration between external AI systems and Copilot experiences. You’ll gain a clear, high‑level understanding of the architecture, key components, and authentication concepts involved, along with guidance on how teams typically get started. Designed for both technical and solution‑focused audiences, this session will focus on demystifying the pattern, sharing practical insights from real implementations, and highlighting available assets and resources you can leverage in your own projects." 
+    register_link: "https://aka.ms/AIWebinars/ProxyAgentPattern"
