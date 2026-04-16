@@ -296,9 +296,11 @@ sessions:
 
   - date: "2026-04-01"
     time: "9:00 AM PT"
-    title: "Organization Success with AI Agents: Real World Case Studies"
+    title: "Real World Agent Case Studies: Zones"
     description: "Join Zones for an inside look at their AI journey, featuring live demos of how they’re scaling Microsoft 365 Copilot and rolling out AI agents across finance and global supply chain operations."
-    register_link: "https://aka.ms/Aiwebinars/CaseStudies4"
+    recording_link: "https://aka.ms/AIWebinars/CaseStudies4"
+    presentation_link: "../resources/Real World Agent Case Studies through Storytelling_1Apr 2026.zip"
+    presentation_label: "Presentation (PPT)"
 
   - date: "2026-04-08"
     time: "9:00 AM PT"
