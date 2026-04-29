@@ -1998,6 +1998,366 @@ footer p {
     border: 2px solid var(--border-color);
     border-radius: 12px;
     padding: 25px;
+}
+
+/* ===== RESOURCES PAGE STYLES ===== */
+
+.resources-section {
+    background: linear-gradient(135deg, var(--postit-blue), var(--bg-secondary));
+    border: 2px solid var(--accent-color);
+    border-radius: 12px;
+    padding: 30px;
+    margin: 40px 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.resources-section::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(0, 120, 212, 0.1) 0%, transparent 70%);
+    animation: pulse 4s ease-in-out infinite;
+    pointer-events: none;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 0.6; }
+}
+
+.resources-section h2 {
+    color: var(--accent-color);
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    position: relative;
+    z-index: 1;
+}
+
+.resources-section p {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    margin-bottom: 25px;
+    position: relative;
+    z-index: 1;
+}
+
+.resources-button {
+    position: relative;
+    z-index: 1;
+    font-size: 16px !important;
+    padding: 16px 32px !important;
+    min-width: 200px;
+}
+
+.resources-container {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    margin: 30px 0;
+}
+
+.resource-section {
+    background: var(--bg-secondary);
+    border: 2px solid var(--border-color);
+    border-radius: 12px;
+    padding: 30px;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.resource-section:hover {
+    border-color: var(--accent-color);
+    box-shadow: 0 4px 12px var(--shadow-medium);
+}
+
+.resource-section h2 {
+    color: var(--accent-color);
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.copyable-section {
+    margin: 20px 0;
+}
+
+.resource-item {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 15px;
+    transition: all 0.3s ease;
+}
+
+.resource-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px var(--shadow-light);
+    border-color: var(--accent-color);
+}
+
+.resource-item h3 {
+    color: var(--text-primary);
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.resource-item a {
+    color: var(--accent-color);
+    text-decoration: none;
+    font-family: monospace;
+    font-size: 0.9rem;
+    word-break: break-all;
+    display: block;
+    margin-bottom: 8px;
+    padding: 8px 12px;
+    background: var(--bg-secondary);
+    border-radius: 4px;
+    border: 1px solid var(--border-color);
+    transition: all 0.3s ease;
+}
+
+.resource-item a:hover {
+    background: var(--accent-color);
+    color: white;
+    transform: translateX(5px);
+}
+
+.resource-item p {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    margin: 0;
+    line-height: 1.4;
+}
+
+.copy-button,
+.copy-section-btn {
+    background: var(--accent-color);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 20px auto;
+    min-width: 160px;
+    justify-content: center;
+}
+
+.copy-button:hover,
+.copy-section-btn:hover {
+    background: var(--accent-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 120, 212, 0.3);
+}
+
+.copy-button {
+    font-size: 16px;
+    padding: 16px 32px;
+    margin: 20px auto 30px auto;
+}
+
+.copy-section-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    min-width: 140px;
+    font-size: 13px;
+    padding: 10px 16px;
+}
+
+/* Workshop Links Section */
+.workshop-links {
+    background: var(--bg-card);
+    border: 2px solid var(--border-color);
+    border-radius: 12px;
+    padding: 30px;
+    margin: 40px 0;
+}
+
+.workshop-links h2 {
+    color: var(--accent-color);
+    font-size: 1.4rem;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.workshop-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.workshop-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background: var(--bg-secondary);
+    border: 2px solid var(--border-color);
+    border-radius: 10px;
+    text-decoration: none;
+    color: var(--text-primary);
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.workshop-link:hover {
+    border-color: var(--accent-color);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 16px var(--shadow-medium);
+    color: var(--accent-color);
+}
+
+.workshop-icon {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.workshop-title {
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .copy-section-btn {
+        position: static;
+        width: 100%;
+        margin: 20px 0 0 0;
+    }
+
+    .resource-section {
+        padding: 20px;
+    }
+
+    .resource-item {
+        padding: 15px;
+    }
+
+    .resource-item a {
+        font-size: 0.8rem;
+        padding: 6px 10px;
+    }
+
+    .workshop-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+    }
+
+    .workshop-link {
+        padding: 15px;
+    }
+
+    .workshop-icon {
+        font-size: 1.5rem;
+    }
+
+    .workshop-title {
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .resources-container {
+        gap: 25px;
+    }
+
+    .resource-section h2 {
+        font-size: 1.2rem;
+    }
+
+    .workshop-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .copy-button {
+        width: 100%;
+        margin: 15px 0 20px 0;
+    }
+}
+
+/* Success State for Copy Buttons */
+.copy-button.success,
+.copy-section-btn.success {
+    background: var(--success-color) !important;
+    transform: scale(1.05);
+}
+
+/* Loading State for Copy Buttons */
+.copy-button:disabled,
+.copy-section-btn:disabled {
+    background: var(--border-color);
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* Instruction Card for Resources Page */
+.instruction-card {
+    background: linear-gradient(135deg, var(--postit-blue), var(--bg-secondary));
+    border: 2px solid var(--accent-color);
+    border-radius: 12px;
+    padding: 25px;
+    margin: 20px 0 30px 0;
+    position: relative;
+}
+
+.instruction-card h2 {
+    color: var(--accent-color);
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+}
+
+.instruction-card p {
+    color: var(--text-secondary);
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+/* Print Styles for Resources Page */
+@media print {
+    .copy-button,
+    .copy-section-btn,
+    .theme-toggle,
+    .back-button {
+        display: none !important;
+    }
+
+    .resource-section {
+        border: 1px solid #ccc !important;
+        background: white !important;
+        page-break-inside: avoid;
+        margin-bottom: 20px !important;
+    }
+
+    .resource-item {
+        background: white !important;
+        border: 1px solid #ddd !important;
+        page-break-inside: avoid;
+    }
+
+    .resource-item a {
+        color: #0078d4 !important;
+        background: #f8f9fa !important;
+    }
+
+    .workshop-links {
+        page-break-inside: avoid;
+    }
+}
     transition: all 0.3s ease;
 }
 
