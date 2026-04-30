@@ -1,4 +1,4 @@
-sessions:
+﻿sessions:
   - date: "2025-03-05"
     title: "Unlocking the Potential of Copilot Studio"
     description: "Discover the power of autonomous agents and AI tools through real-world examples and interactive activities."
@@ -319,6 +319,7 @@ sessions:
 
   - date: "2026-04-15"
     time: "09:30 PM PT (APAC)"
+    region: APAC
     title: "Unlocking the Power of Agent Builder"
     description: "In this session, you will learn to build an agent using Agent Builder tailored to your specific scenario, connect it to relevant knowledge sources (such as SharePoint and supported connectors), test it interactively, and deploy it across your organization."
     register_link: "https://aka.ms/AIWebinars/APACAgentBuilder"
@@ -331,6 +332,7 @@ sessions:
 
   - date: "2026-04-28"
     time: "09:00 PM PT (APAC)"
+    region: APAC
     title: "Unlocking Agent 365 Security and Governance"
     description: "In this session, we’ll walk through how Agent 365 (A365) helps you securely build, monitor, and govern agents across your environment—so innovation doesn’t come at the cost of control" 
     register_link: "https://aka.ms/AIWebinars/A365APAC2"

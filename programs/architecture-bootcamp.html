@@ -16,6 +16,12 @@
   <meta name="author" property="og:author" content="Microsoft Copilot Acceleration Team" />
   <title>Microsoft Copilot Studio Architecture Bootcamp</title>
   <link rel="stylesheet" href="../assets/css/architecture-bootcamp.css">
+  <!-- Fallback preview CSS injected for local rendering only. Remove before commit if repo CSS is present. -->
+<style>
+:root{--bg:#f7f8fb;--card:#fff;--ink:#172033;--muted:#5d6677;--line:#e3e7ef;--blue:#2563eb;--teal:#0f766e;--purple:#6d28d9;--orange:#b45309;--green:#047857;--shadow:0 18px 50px rgba(15,23,42,.08)}
+*{box-sizing:border-box}body{margin:0;font-family:"Segoe UI",Arial,sans-serif;background:linear-gradient(180deg,#f6f8fc,#eef2f7);color:var(--ink);line-height:1.5}.skip-link{position:absolute;left:-999px}.header{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}.nav-container{max-width:1180px;margin:auto;padding:14px 24px;display:flex;justify-content:space-between;gap:28px;align-items:center}.logo-container{display:flex;gap:12px;align-items:center;font-weight:700}.logo-line{width:6px;height:42px;background:linear-gradient(180deg,#7c3aed,#2563eb);border-radius:99px}.logo-text{font-size:14px;line-height:1.15}.nav-links{display:flex;gap:18px;flex-wrap:wrap}.nav-links a{color:#334155;text-decoration:none;font-size:14px;font-weight:600}.main-container{max-width:1180px;margin:0 auto;padding:36px 24px 60px}.hero{display:grid;grid-template-columns:1.25fr .75fr;gap:24px;margin-bottom:24px}.hero-card,.hero-meta,.about-section,.agenda-section{background:var(--card);border:1px solid var(--line);border-radius:28px;box-shadow:var(--shadow)}.hero-card{min-height:360px;background:radial-gradient(circle at 10% 20%,rgba(124,58,237,.22),transparent 34%),radial-gradient(circle at 90% 10%,rgba(37,99,235,.18),transparent 30%),linear-gradient(135deg,#111827,#24304a);color:white;display:flex;align-items:end}.hero-panel{padding:44px;max-width:730px}.eyebrow,.section-kicker,.meta-kicker{font-size:12px;letter-spacing:.12em;text-transform:uppercase;font-weight:800;color:#7c3aed}.hero .eyebrow{color:#c4b5fd}.hero h1{font-size:54px;line-height:1.02;margin:14px 0 18px}.hero-copy{font-size:19px;color:#e5e7eb;max-width:680px}.hero-cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}.btn,.register-btn{display:inline-flex;align-items:center;gap:8px;border-radius:999px;padding:11px 16px;text-decoration:none;font-weight:750;font-size:14px}.btn-primary,.register-btn.primary{background:#2563eb;color:white}.btn-secondary{background:rgba(255,255,255,.12);color:white;border:1px solid rgba(255,255,255,.25)}.hero-meta{padding:24px}.meta-header,.session-header,.session-top{display:flex;justify-content:space-between;gap:16px;align-items:flex-start}.meta-title,.section-title{font-size:30px;line-height:1.15;margin:0 0 12px}.quick-grid{display:grid;grid-template-columns:1fr;gap:12px}.quick-card,.fit-panel,.session-box,.outcome-box,.agenda-details{border:1px solid var(--line);border-radius:20px;background:#fbfcff;padding:18px}.quick-label{display:block;font-size:12px;text-transform:uppercase;color:var(--muted);font-weight:800}.quick-value{font-size:20px;font-weight:800}.quick-subtext{color:var(--muted);font-size:13px}.pill-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}.pill,.legend-item,.session-badge{border:1px solid var(--line);border-radius:999px;padding:6px 10px;background:#fff;font-size:12px;font-weight:700;color:#475569}.content-grid{display:grid;gap:24px}.about-section,.agenda-section{padding:30px}.about-text,p{color:#445064}.subtle-note{padding:18px;border-radius:18px;background:#f4f7ff;border-left:5px solid #2563eb;color:#334155}.fit-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:18px 0}.fit-heading{margin:0 0 10px}.fit-list,.expect-list{margin:0;padding-left:20px}.session-header{margin-bottom:18px}.legend{display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-end}.mode-dot{width:9px;height:9px;border-radius:99px;display:inline-block;background:#64748b}.mode-dot.inperson{background:#2563eb}.mode-dot.virtual{background:#7c3aed}.mode-dot.closed{background:#94a3b8}.session-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}.session-box{margin-bottom:16px}.session-name{margin:0;font-size:20px}.session-meta{margin:12px 0;color:#475569}.session-meta-row{margin:6px 0}.btn-group{display:flex;gap:10px;flex-wrap:wrap}.register-btn.is-disabled,.register-btn.disabled{background:#eef2f7;color:#64748b;pointer-events:none}.agenda-intro{max-width:850px}.outcome-box{background:#f8fafc;margin:18px 0}.outcome-title{display:block;margin-bottom:8px}.agenda-accordion{display:grid;gap:14px}.agenda-summary{display:flex;align-items:center;justify-content:space-between;cursor:pointer}.agenda-day-label{display:inline-block;color:#2563eb;font-weight:900;text-transform:uppercase;font-size:12px;letter-spacing:.08em}.agenda-day-title{margin:2px 0 0}.agenda-list{margin:16px 0 0;padding:0;list-style:none;display:grid;gap:8px}.agenda-item{display:grid;grid-template-columns:120px 1fr;gap:12px;border-top:1px solid var(--line);padding-top:8px}.agenda-time{color:#64748b;font-weight:700}.agenda-title{font-weight:700}.agenda-title.lab{color:#047857}.agenda-title.module{color:#1d4ed8}.agenda-title.break{color:#b45309}.agenda-title.interactive{color:#6d28d9}.preview-warning{max-width:1180px;margin:16px auto 0;padding:14px 24px;border:1px solid #f59e0b;background:#fffbeb;color:#78350f;border-radius:16px;font-family:"Segoe UI",Arial,sans-serif}
+@media(max-width:850px){.hero{grid-template-columns:1fr}.hero h1{font-size:38px}.fit-grid,.session-list{grid-template-columns:1fr}.nav-container{align-items:flex-start;flex-direction:column}.agenda-item{grid-template-columns:1fr}.hero-panel{padding:30px}}
+</style>
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to main content</a>
@@ -156,19 +162,6 @@
 
     
 
-          <article class="session-box">
-            <div class="session-top">
-              <h3 class="session-name">Virtual Americas-Eastern Time</h3>
-              <span class="session-badge">Registration open</span>
-            </div>
-            <div class="session-meta">
-              <div class="session-meta-row"><span class="meta-icon">📅</span> Apr 28–30, 2026</div>
-              <div class="session-meta-row"><span class="meta-icon">🕘</span> 9:00 AM–4:30 PM Eastern Daylight Time</div>
-            </div>
-            <div class="btn-group" aria-label="Virtual registration options">
-              <a class="register-btn primary" href="https://msevents.microsoft.com/event?id=2515957006"><span class="mode-dot virtual"></span>Virtual</a>
-            </div>
-          </article>
 
           <article class="session-box">
             <div class="session-top">
@@ -228,9 +221,24 @@
               <a class="register-btn is-disabled" aria-disabled="true" role="link"><span class="mode-dot virtual"></span>Virtual</a>
             </div>
           </article>
+
+             <article class="session-box">
+            <div class="session-top">
+              <h3 class="session-name">Virtual Americas-Eastern Time</h3>
+              <span class="session-badge">Closed</span>
+            </div>
+            <div class="session-meta">
+              <div class="session-meta-row"><span class="meta-icon">📅</span> Apr 28–30, 2026</div>
+              <div class="session-meta-row"><span class="meta-icon">🕘</span> 9:00 AM–4:30 PM Eastern Daylight Time</div>
+            </div>
+            <div class="btn-group" aria-label="Virtual registration options">
+              <a class="register-btn disabled" href="https://msevents.microsoft.com/event?id=2515957006"><span class="mode-dot virtual"></span>Virtual</a>
+            </div>
+          </article>
         </div>
       </section>
 
+      
       <section class="agenda-section" id="agenda" aria-labelledby="agenda-title">
         <div class="section-kicker">Bootcamp schedule</div>
         <h2 class="section-title" id="agenda-title">3-day agenda at a glance</h2>
@@ -318,4 +326,14 @@
               <li class="agenda-item"><div class="agenda-time">10:45–11:00</div><div class="agenda-title module">Module 12 · SDK demo</div></li>
               <li class="agenda-item"><div class="agenda-time">11:00–11:30</div><div class="agenda-title module">Module 13 · Multi-agent architecture</div></li>
               <li class="agenda-item"><div class="agenda-time">11:30–12:00</div><div class="agenda-title lab">Lab 9 · Multi-agent</div></li>
-              <li class="agenda-item"><div class="agenda-time">12:00–13:00</div><div class="agenda-title break">Lunch break</div><
+              <li class="agenda-item"><div class="agenda-time">12:00–13:00</div><div class="agenda-title break">Lunch break</div></li>
+              <li class="agenda-item"><div class="agenda-time">13:00–13:30</div><div class="agenda-title module">[Preview stops here — source file was cut off]</div></li>
+            </ol>
+          </details>
+        </div>
+      </section>
+    </section>
+  </main>
+  <div class="preview-warning"><strong>Preview note:</strong> This local preview was repaired after the uploaded source ended mid-tag. Do not commit this repaired file as-is; use it to inspect layout only.</div>
+</body>
+</html>
