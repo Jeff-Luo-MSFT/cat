@@ -355,11 +355,23 @@
     description: "This session will help you pick the right integration pattern for your Copilot Studio agent, from no-code embeds to native mobile apps, custom UIs, and server-side connectors." 
     register_link: "https://aka.ms/AIWebinars/AgentIntegrationPatterns"
 
+  - date: "2026-05-13"
+    time: "9:30 PM PT"
+    title: "Become an Agent Boss with Agent Builder (Build‑Along Session)"
+    description: "This session is designed as a build‑along experience, where participants can follow a guided, step‑by‑step walkthrough to create their own personal productivity agent using Microsoft Copilot Agent Builder." 
+    register_link: "https://aka.ms/AIWebinars/APACAgentBoss"
+
   - date: "2026-05-20"
     time: "9:00 AM PT"
     title: "Accelerate AI Adoption with Microsoft Agent 365"
     description: "Join this practical session on using Microsoft Agent 365 to manage AI agents at scale with real-time visibility, governance, and enterprise-grade security and compliance." 
     register_link: "https://aka.ms/AIWebinars/AIAdoptionwAgent365"
+
+  - date: "2026-05-25"
+    time: "9:30 PM PT"
+    title: "Agent365 Access Control, Identity, Observability & Interoperability"
+    description: "In this session, we’ll walk through how Microsoft enables secure, governed, and observable agent deployments at scale. Whether you're shaping architecture decisions or responsible for production rollout, this session will give you practical insight into the control plane behind enterprise-grade agents." 
+    register_link: "https://aka.ms/AIWebinars/A365APAC3"
 
   - date: "2026-05-27"
     time: "9:00 AM PT"
