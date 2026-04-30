@@ -356,7 +356,8 @@
     register_link: "https://aka.ms/AIWebinars/AgentIntegrationPatterns"
 
   - date: "2026-05-13"
-    time: "9:30 PM PT"
+    time: "9:30 PM PT (APAC)"
+    region: APAC
     title: "Become an Agent Boss with Agent Builder (Build‑Along Session)"
     description: "This session is designed as a build‑along experience, where participants can follow a guided, step‑by‑step walkthrough to create their own personal productivity agent using Microsoft Copilot Agent Builder." 
     register_link: "https://aka.ms/AIWebinars/APACAgentBoss"
@@ -368,9 +369,10 @@
     register_link: "https://aka.ms/AIWebinars/AIAdoptionwAgent365"
 
   - date: "2026-05-25"
-    time: "9:30 PM PT"
+    time: "9:30 PM PT (APAC)"
+    region: APAC
     title: "Agent365 Access Control, Identity, Observability & Interoperability"
-    description: "In this session, we’ll walk through how Microsoft enables secure, governed, and observable agent deployments at scale. Whether you're shaping architecture decisions or responsible for production rollout, this session will give you practical insight into the control plane behind enterprise-grade agents." 
+    description: "In this session, we’ll walk through how Microsoft enables secure, governed, and observable agent deployments at scale. The session will give you practical insights into the control plane behind enterprise-grade agents." 
     register_link: "https://aka.ms/AIWebinars/A365APAC3"
 
   - date: "2026-05-27"
