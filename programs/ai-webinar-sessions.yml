@@ -380,3 +380,8 @@
     title: "Connecting Customer-Built AI to Microsoft 365 Copilot: The Proxy Agent Pattern"
     description: "Join this session to discover the Proxy Agent pattern for connecting customer‑built Agents to Microsoft 365 Copilot." 
     register_link: "https://aka.ms/AIWebinars/ProxyAgentPattern"
+  - date: "2026-07-08"
+    time: "9:00 AM PT"
+    title: "Test Session"
+    description: "Discover the Proxy Agent pattern for connecting customer-built Agents to Microsoft 365 Copilot."
+    register_link: "https://aka.ms/AIWEbinars/proxyagentpattern"
