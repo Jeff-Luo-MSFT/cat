@@ -1,339 +1,913 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="image" property="og:image" content="https://microsoft.github.io/cat/images/bootcamp-og.png" />
-  <meta name="image" property="og:image:width" content="1200" />
-  <meta name="image" property="og:image:height" content="630" />
-  <meta property="og:image:alt" content="Microsoft Copilot Studio Architecture Bootcamp" />
-  <meta name="title" property="og:title" content="Microsoft Copilot Studio Architecture Bootcamp" />
-  <meta name="description" property="og:description" content="A fast-paced 3-day intermediate-to-advanced program aligned to the Microsoft Copilot Studio Implementation Guidance, focused on proven patterns, de-risking complex projects, and under-the-hood architecture decisions." />
-  <meta name="url" property="og:url" content="https://microsoft.github.io/cat/programs/architecture-bootcamp.html" />
-  <meta name="type" property="og:type" content="article" />
-  <meta name="site_name" property="og:site_name" content="Microsoft Copilot Acceleration Team - Architecture Bootcamp" />
-  <meta name="locale" property="og:locale" content="en_US" />
-  <meta name="author" property="og:author" content="Microsoft Copilot Acceleration Team" />
-  <title>Microsoft Copilot Studio Architecture Bootcamp</title>
-  <link rel="stylesheet" href="../assets/css/architecture-bootcamp.css">
-  <!-- Fallback preview CSS injected for local rendering only. Remove before commit if repo CSS is present. -->
-<style>
-:root{--bg:#f7f8fb;--card:#fff;--ink:#172033;--muted:#5d6677;--line:#e3e7ef;--blue:#2563eb;--teal:#0f766e;--purple:#6d28d9;--orange:#b45309;--green:#047857;--shadow:0 18px 50px rgba(15,23,42,.08)}
-*{box-sizing:border-box}body{margin:0;font-family:"Segoe UI",Arial,sans-serif;background:linear-gradient(180deg,#f6f8fc,#eef2f7);color:var(--ink);line-height:1.5}.skip-link{position:absolute;left:-999px}.header{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}.nav-container{max-width:1180px;margin:auto;padding:14px 24px;display:flex;justify-content:space-between;gap:28px;align-items:center}.logo-container{display:flex;gap:12px;align-items:center;font-weight:700}.logo-line{width:6px;height:42px;background:linear-gradient(180deg,#7c3aed,#2563eb);border-radius:99px}.logo-text{font-size:14px;line-height:1.15}.nav-links{display:flex;gap:18px;flex-wrap:wrap}.nav-links a{color:#334155;text-decoration:none;font-size:14px;font-weight:600}.main-container{max-width:1180px;margin:0 auto;padding:36px 24px 60px}.hero{display:grid;grid-template-columns:1.25fr .75fr;gap:24px;margin-bottom:24px}.hero-card,.hero-meta,.about-section,.agenda-section{background:var(--card);border:1px solid var(--line);border-radius:28px;box-shadow:var(--shadow)}.hero-card{min-height:360px;background:radial-gradient(circle at 10% 20%,rgba(124,58,237,.22),transparent 34%),radial-gradient(circle at 90% 10%,rgba(37,99,235,.18),transparent 30%),linear-gradient(135deg,#111827,#24304a);color:white;display:flex;align-items:end}.hero-panel{padding:44px;max-width:730px}.eyebrow,.section-kicker,.meta-kicker{font-size:12px;letter-spacing:.12em;text-transform:uppercase;font-weight:800;color:#7c3aed}.hero .eyebrow{color:#c4b5fd}.hero h1{font-size:54px;line-height:1.02;margin:14px 0 18px}.hero-copy{font-size:19px;color:#e5e7eb;max-width:680px}.hero-cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}.btn,.register-btn{display:inline-flex;align-items:center;gap:8px;border-radius:999px;padding:11px 16px;text-decoration:none;font-weight:750;font-size:14px}.btn-primary,.register-btn.primary{background:#2563eb;color:white}.btn-secondary{background:rgba(255,255,255,.12);color:white;border:1px solid rgba(255,255,255,.25)}.hero-meta{padding:24px}.meta-header,.session-header,.session-top{display:flex;justify-content:space-between;gap:16px;align-items:flex-start}.meta-title,.section-title{font-size:30px;line-height:1.15;margin:0 0 12px}.quick-grid{display:grid;grid-template-columns:1fr;gap:12px}.quick-card,.fit-panel,.session-box,.outcome-box,.agenda-details{border:1px solid var(--line);border-radius:20px;background:#fbfcff;padding:18px}.quick-label{display:block;font-size:12px;text-transform:uppercase;color:var(--muted);font-weight:800}.quick-value{font-size:20px;font-weight:800}.quick-subtext{color:var(--muted);font-size:13px}.pill-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}.pill,.legend-item,.session-badge{border:1px solid var(--line);border-radius:999px;padding:6px 10px;background:#fff;font-size:12px;font-weight:700;color:#475569}.content-grid{display:grid;gap:24px}.about-section,.agenda-section{padding:30px}.about-text,p{color:#445064}.subtle-note{padding:18px;border-radius:18px;background:#f4f7ff;border-left:5px solid #2563eb;color:#334155}.fit-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:18px 0}.fit-heading{margin:0 0 10px}.fit-list,.expect-list{margin:0;padding-left:20px}.session-header{margin-bottom:18px}.legend{display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-end}.mode-dot{width:9px;height:9px;border-radius:99px;display:inline-block;background:#64748b}.mode-dot.inperson{background:#2563eb}.mode-dot.virtual{background:#7c3aed}.mode-dot.closed{background:#94a3b8}.session-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}.session-box{margin-bottom:16px}.session-name{margin:0;font-size:20px}.session-meta{margin:12px 0;color:#475569}.session-meta-row{margin:6px 0}.btn-group{display:flex;gap:10px;flex-wrap:wrap}.register-btn.is-disabled,.register-btn.disabled{background:#eef2f7;color:#64748b;pointer-events:none}.agenda-intro{max-width:850px}.outcome-box{background:#f8fafc;margin:18px 0}.outcome-title{display:block;margin-bottom:8px}.agenda-accordion{display:grid;gap:14px}.agenda-summary{display:flex;align-items:center;justify-content:space-between;cursor:pointer}.agenda-day-label{display:inline-block;color:#2563eb;font-weight:900;text-transform:uppercase;font-size:12px;letter-spacing:.08em}.agenda-day-title{margin:2px 0 0}.agenda-list{margin:16px 0 0;padding:0;list-style:none;display:grid;gap:8px}.agenda-item{display:grid;grid-template-columns:120px 1fr;gap:12px;border-top:1px solid var(--line);padding-top:8px}.agenda-time{color:#64748b;font-weight:700}.agenda-title{font-weight:700}.agenda-title.lab{color:#047857}.agenda-title.module{color:#1d4ed8}.agenda-title.break{color:#b45309}.agenda-title.interactive{color:#6d28d9}.preview-warning{max-width:1180px;margin:16px auto 0;padding:14px 24px;border:1px solid #f59e0b;background:#fffbeb;color:#78350f;border-radius:16px;font-family:"Segoe UI",Arial,sans-serif}
-@media(max-width:850px){.hero{grid-template-columns:1fr}.hero h1{font-size:38px}.fit-grid,.session-list{grid-template-columns:1fr}.nav-container{align-items:flex-start;flex-direction:column}.agenda-item{grid-template-columns:1fr}.hero-panel{padding:30px}}
-</style>
-</head>
-<body>
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="https://microsoft.github.io/cat/images/bootcamp-og.png" name="image" property="og:image"/>
+  <meta content="1200" name="image" property="og:image:width"/>
+  <meta content="630" name="image" property="og:image:height"/>
+  <meta content="Microsoft Copilot Studio Architecture Bootcamp" property="og:image:alt"/>
+  <meta content="Microsoft Copilot Studio Architecture Bootcamp" name="title" property="og:title"/>
+  <meta content="A fast-paced 3-day intermediate-to-advanced program aligned to the Microsoft Copilot Studio Implementation Guidance, focused on proven patterns, de-risking complex projects, and under-the-hood architecture decisions." name="description" property="og:description"/>
+  <meta content="https://microsoft.github.io/cat/programs/architecture-bootcamp.html" name="url" property="og:url"/>
+  <meta content="article" name="type" property="og:type"/>
+  <meta content="Microsoft Copilot Acceleration Team - Architecture Bootcamp" name="site_name" property="og:site_name"/>
+  <meta content="en_US" name="locale" property="og:locale"/>
+  <meta content="Microsoft Copilot Acceleration Team" name="author" property="og:author"/>
+  <title>
+   Microsoft Copilot Studio Architecture Bootcamp
+  </title>
+  <link href="../assets/css/architecture-bootcamp.css" rel="stylesheet"/>
+  <style>
+   :root{--bg:#f7f8fb;--card:#fff;--ink:#172033;--muted:#5d6677;--line:#e3e7ef;--blue:#2563eb;--teal:#0f766e;--purple:#6d28d9;--orange:#b45309;--green:#047857;--shadow:0 18px 50px rgba(15,23,42,.08)}
+*{box-sizing:border-box}body{margin:0;font-family:"Segoe UI",Arial,sans-serif;background:linear-gradient(180deg,#f6f8fc,#eef2f7);color:var(--ink);line-height:1.5}.skip-link{position:absolute;left:-999px}.header{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}.nav-container{max-width:1180px;margin:auto;padding:14px 24px;display:flex;justify-content:space-between;gap:28px;align-items:center}.logo-container{display:flex;gap:12px;align-items:center;font-weight:700}.logo-line{width:6px;height:42px;background:linear-gradient(180deg,#7c3aed,#2563eb);border-radius:99px}.logo-text{font-size:14px;line-height:1.15}.nav-links{display:flex;gap:18px;flex-wrap:wrap}.nav-links a{color:#334155;text-decoration:none;font-size:14px;font-weight:600}.main-container{max-width:1180px;margin:0 auto;padding:36px 24px 60px}.hero{display:grid;grid-template-columns:1.25fr .75fr;gap:24px;margin-bottom:24px}.hero-card,.hero-meta,.about-section,.agenda-section{background:var(--card);border:1px solid var(--line);border-radius:28px;box-shadow:var(--shadow)}.hero-card{min-height:360px;background:radial-gradient(circle at 10% 20%,rgba(124,58,237,.22),transparent 34%),radial-gradient(circle at 90% 10%,rgba(37,99,235,.18),transparent 30%),linear-gradient(135deg,#111827,#24304a);color:white;display:flex;align-items:end}.hero-panel{padding:44px;max-width:730px}.eyebrow,.section-kicker,.meta-kicker{font-size:12px;letter-spacing:.12em;text-transform:uppercase;font-weight:800;color:#7c3aed}.hero .eyebrow{color:#c4b5fd}.hero h1{font-size:54px;line-height:1.02;margin:14px 0 18px}.hero-copy{font-size:19px;color:#e5e7eb;max-width:680px}.hero-cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}.btn,.register-btn{display:inline-flex;align-items:center;gap:8px;border-radius:999px;padding:11px 16px;text-decoration:none;font-weight:750;font-size:14px}.btn-primary,.register-btn.primary{background:#2563eb;color:white}.btn-secondary{background:rgba(255,255,255,.12);color:white;border:1px solid rgba(255,255,255,.25)}.hero-meta{padding:24px}.meta-header,.session-header,.session-top{display:flex;justify-content:space-between;gap:16px;align-items:flex-start}.meta-title,.section-title{font-size:30px;line-height:1.15;margin:0 0 12px}.section-title-compact{margin-bottom:6px}.quick-grid{display:grid;grid-template-columns:1fr;gap:12px}.quick-card,.fit-panel,.session-box,.outcome-box,.agenda-details{border:1px solid var(--line);border-radius:20px;background:#fbfcff;padding:18px}.quick-label{display:block;font-size:12px;text-transform:uppercase;color:var(--muted);font-weight:800}.quick-value{font-size:20px;font-weight:800}.quick-subtext{color:var(--muted);font-size:13px}.pill-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}.pill,.legend-item,.session-badge{border:1px solid var(--line);border-radius:999px;padding:6px 10px;background:#fff;font-size:12px;font-weight:700;color:#475569}.content-grid{display:grid;gap:24px}.about-section,.agenda-section{padding:30px}.about-text,p{color:#445064}.subtle-note{padding:18px;border-radius:18px;background:#f4f7ff;border-left:5px solid #2563eb;color:#334155}.fit-grid{display:grid;gap:24px;margin:18px 0;align-items:stretch;width:100%}.audience-fit-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.resources-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.fit-panel{height:100%;display:flex;flex-direction:column}.fit-heading{margin:0 0 10px}.fit-list,.expect-list{margin:0;padding-left:20px}.fit-list{font-size:16px}.fit-list li{margin-bottom:6px}.resources-grid .register-btn{margin-top:auto;align-self:flex-start}.resources-primary-action{margin:16px 0 20px}.session-header{margin-bottom:18px}.legend{display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-end}.mode-dot{width:9px;height:9px;border-radius:99px;display:inline-block;background:#64748b}.mode-dot.inperson{background:#2563eb}.mode-dot.virtual{background:#7c3aed}.mode-dot.closed{background:#94a3b8}.session-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}.session-box{margin-bottom:16px}.session-name{margin:0;font-size:20px}.session-meta{margin:12px 0;color:#475569}.session-meta-row{margin:6px 0}.btn-group{display:flex;gap:10px;flex-wrap:wrap}.register-btn.is-disabled{background:#eef2f7;color:#64748b;pointer-events:none}.agenda-intro{max-width:850px}.outcome-box{background:#f8fafc;margin:18px 0}.outcome-title{display:block;margin-bottom:8px}.agenda-accordion{display:grid;gap:14px}.agenda-summary{display:flex;align-items:center;justify-content:space-between;cursor:pointer}.agenda-day-label{display:inline-block;color:#2563eb;font-weight:900;text-transform:uppercase;font-size:12px;letter-spacing:.08em}.agenda-day-title{margin:2px 0 0}.agenda-list{margin:16px 0 0;padding:0;list-style:none;display:grid;gap:8px}.agenda-item{display:grid;grid-template-columns:120px 1fr;gap:12px;border-top:1px solid var(--line);padding-top:8px}.agenda-time{color:#64748b;font-weight:700}.agenda-title{font-weight:700}.agenda-title.lab{color:#047857}.agenda-title.module{color:#1d4ed8}.agenda-title.break{color:#b45309}.agenda-title.interactive{color:#6d28d9}
+@media(max-width:850px){.hero{grid-template-columns:1fr}.hero h1{font-size:38px}.audience-fit-grid,.resources-grid,.session-list{grid-template-columns:1fr}.nav-container{align-items:flex-start;flex-direction:column}.agenda-item{grid-template-columns:1fr}.hero-panel{padding:30px}}
 
+  .agenda-summary{gap:16px}.agenda-toggle{display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;padding:6px 10px;border:1px solid var(--line,#e3e7ef);border-radius:999px;background:#fff;color:#475569;font-size:12px;font-weight:700;white-space:nowrap}.agenda-details[open] .agenda-toggle{border-color:#bfdbfe;background:#eff6ff;color:#1d4ed8}.agenda-toggle-open{display:none}.agenda-details[open] .agenda-toggle-closed{display:none}.agenda-details[open] .agenda-toggle-open{display:inline}.agenda-chevron{transition:transform 160ms ease}.agenda-details[open] .agenda-chevron{transform:rotate(180deg)}@media(max-width:600px){.agenda-summary{align-items:flex-start}.agenda-toggle{font-size:11px;padding:5px 8px}}
+  </style>
+ </head>
+ <body>
+  <a class="skip-link" href="#main-content">
+   Skip to main content
+  </a>
   <header class="header">
-    <div class="nav-container">
-      <div class="logo-container">
-        <div class="logo-line"></div>
-        <div class="logo-text">Microsoft<br />Copilot Acceleration Team</div>
-      </div>
-      <nav class="nav-links" aria-label="Section navigation">
-        <a href="#about">About</a>
-        <a href="#who">Who Should Attend</a>
-        <a href="#sessions">Upcoming Sessions</a>
-        <a href="#agenda">Bootcamp Schedule</a>
-        <a href="#cancellation">Cancellation</a>
-      </nav>
+   <div class="nav-container">
+    <div class="logo-container">
+     <div class="logo-line">
+     </div>
+     <div class="logo-text">
+      Microsoft
+      <br/>
+      Copilot Acceleration Team
+     </div>
     </div>
+    <nav aria-label="Section navigation" class="nav-links">
+     <a href="#about">
+      About
+     </a>
+     <a href="#who">
+      Who Should Attend
+     </a>
+     <a href="#sessions">
+      Upcoming Sessions
+     </a>
+     <a href="#resources">
+      Resources
+     </a>
+     <a href="#agenda">
+      Bootcamp Schedule
+     </a>
+    </nav>
+   </div>
   </header>
-
   <main class="main-container" id="main-content">
-    <section class="hero" aria-label="Bootcamp overview">
-      <div class="hero-card">
-        <div class="hero-panel">
-          <div class="eyebrow">Architecture-first training</div>
-          <h1>Microsoft Copilot Agent Architecture Bootcamp</h1>
-          <p class="hero-copy">
-            A fast-paced 3-day intermediate-to-advanced experience focused on proven patterns,
-            architecture decisions, and de-risking complex Copilot Studio implementations.
-          </p>
-          <div class="hero-cta">
-            <a class="btn btn-primary" href="#sessions">View upcoming sessions</a>
-            <a class="btn btn-secondary" href="https://microsoft.github.io/cat/programs/architecture-bootcamp.html" target="_blank" rel="noopener">View current CAT page</a>
-          </div>
-        </div>
+   <section aria-label="Bootcamp overview" class="hero">
+    <div class="hero-card">
+     <div class="hero-panel">
+      <div class="eyebrow">
+       Architecture-First Training
       </div>
-
-      <aside class="hero-meta" aria-label="At a glance">
-        <div class="meta-header">
-          <h2 class="meta-title">At a glance</h2>
-          <span class="meta-kicker">Program snapshot</span>
-        </div>
-
-        <div class="quick-grid">
-          <div class="quick-card">
-            <span class="quick-label">Duration</span>
-            <div class="quick-value">3 days</div>
-            <div class="quick-subtext">Focused, fast-paced architecture training</div>
-          </div>
-          <div class="quick-card">
-            <span class="quick-label">Level</span>
-            <div class="quick-value">Intermediate to Advanced</div>
-            <div class="quick-subtext">Built for experienced practitioners</div>
-          </div>
-          <div class="quick-card">
-            <span class="quick-label">Format</span>
-            <div class="quick-value">In-person + virtual</div>
-            <div class="quick-subtext">By session availability and region</div>
-          </div>
-          <div class="quick-card">
-            <span class="quick-label">Audience</span>
-            <div class="quick-value">Architects + technical leads</div>
-            <div class="quick-subtext">Enterprise solution and governance roles</div>
-          </div>
-        </div>
-
-        <div class="pill-row" aria-label="Program highlights">
-          <span class="pill">Implementation Guidance aligned</span>
-          <span class="pill">Hands-on architecture focus</span>
-          <span class="pill">Instructor-led</span>
-        </div>
-      </aside>
+      <h1>
+       Microsoft Copilot Studio Architecture Bootcamp
+      </h1>
+      <p class="hero-copy">
+       A fast-paced, three-day, intermediate-to-advanced experience focused on proven patterns,
+            architecture decisions, and de-risking complex Copilot Studio implementations.
+      </p>
+      <div class="hero-cta">
+       <a class="btn btn-primary" href="#sessions">
+        View Upcoming Sessions
+       </a>
+       <a class="btn btn-secondary" href="https://aka.ms/whoiscat" rel="noopener" target="_blank">
+        View CAT Programs
+       </a>
+      </div>
+     </div>
+    </div>
+    <aside aria-label="At a Glance" class="hero-meta">
+     <div class="meta-header">
+      <h2 class="meta-title">
+       At a Glance
+      </h2>
+      <span class="meta-kicker">
+       Program Snapshot
+      </span>
+     </div>
+     <div class="quick-grid">
+      <div class="quick-card">
+       <span class="quick-label">
+        Duration
+       </span>
+       <div class="quick-value">
+        3 days
+       </div>
+       <div class="quick-subtext">
+        Focused, fast-paced architecture training.
+       </div>
+      </div>
+      <div class="quick-card">
+       <span class="quick-label">
+        Level
+       </span>
+       <div class="quick-value">
+        Intermediate to Advanced
+       </div>
+       <div class="quick-subtext">
+        Built for experienced practitioners.
+       </div>
+      </div>
+      <div class="quick-card">
+       <span class="quick-label">
+        Format
+       </span>
+       <div class="quick-value">
+        In-person + virtual
+       </div>
+       <div class="quick-subtext">
+        By session availability and region.
+       </div>
+      </div>
+      <div class="quick-card">
+       <span class="quick-label">
+        Audience
+       </span>
+       <div class="quick-value">
+        Architects + technical leads
+       </div>
+       <div class="quick-subtext">
+        Enterprise solution and governance roles.
+       </div>
+      </div>
+     </div>
+     <div aria-label="Program highlights" class="pill-row">
+      <span class="pill">
+       Implementation Guidance-Aligned
+      </span>
+      <span class="pill">
+       Hands-On Architecture Focus
+      </span>
+      <span class="pill">
+       Instructor-Led
+      </span>
+     </div>
+    </aside>
+   </section>
+   <section class="content-grid">
+    <section class="about-section" id="about">
+     <div class="section-kicker">
+      About the Program
+     </div>
+     <h2 class="section-title">
+      Architecture Guidance with Practical Depth
+     </h2>
+     <p class="about-text">
+      Copilot Studio Architecture Bootcamp is a fast-paced, three-day, intermediate-to-advanced program aligned to the Microsoft Copilot Studio Implementation Guidance, focused on proven patterns, de-risking complex projects, and under-the-hood architecture decisions.
+     </p>
+     <div class="subtle-note">
+      <strong>
+       Program Update:
+      </strong>
+      The Copilot Studio Architecture Bootcamp has been relaunched with
+      <strong>
+       16 modules and 10 hands-on labs
+      </strong>
+      , focused on architecture, governance, and real-world implementation patterns.
+      <br/>
+      <br/>
+      Microsoft employees are invited to attend virtually. Please note that
+      <strong>
+       travel and expenses are not provided
+      </strong>
+      .
+     </div>
+     <p class="about-text">
+      We highly suggest attending in-person to meet with industry professionals and trainers.
+     </p>
     </section>
-
-    <section class="content-grid">
-      <section class="about-section" id="about">
-        <div class="section-kicker">About the program</div>
-        <h2 class="section-title">Architecture guidance with practical depth</h2>
-        <p class="about-text">
-          Copilot Studio Architecture Bootcamp is a fast-paced 3-day intermediate-to-advanced program aligned to the Microsoft Copilot Studio Implementation Guidance, focused on proven patterns, de-risking complex projects, and under-the-hood architecture decisions.
-        </p>
-        <div class="subtle-note">
-          <strong>Program update:</strong> The Copilot Studio Architecture Bootcamp has been re-launched with <strong>16 modules and 10 hands-on labs</strong>, focused on architecture, governance, and real-world implementation patterns.
-          <br><br>
-          Microsoft employees are invited to attend virtually. Please note that <strong>travel and expenses are not provided</strong>.
-        </div>
-        <p class="about-text">
-          We highly suggest attending in-person to meet with industry professionals and trainers.
-        </p>
+    <section aria-labelledby="who-title" class="about-section" id="who">
+     <div class="section-kicker">
+      Audience Fit
+     </div>
+     <h2 class="section-title" id="who-title">
+      Who This Bootcamp Is For
+     </h2>
+     <p class="about-text">
+      Designed for technical professionals who architect, deliver, or govern Copilot Studio solutions in enterprise environments.
+     </p>
+     <div class="fit-grid audience-fit-grid">
+      <section aria-labelledby="typical-attendees-title" class="fit-panel">
+       <h3 class="fit-heading" id="typical-attendees-title">
+        Typical Attendees
+       </h3>
+       <ul class="fit-list">
+        <li class="fit-item">
+         Solution and Enterprise Architects
+        </li>
+        <li class="fit-item">
+         Delivery Consultants and Implementation Leads
+        </li>
+        <li class="fit-item">
+         Partner Technical Architects and Customer Engineers
+        </li>
+        <li class="fit-item">
+         Technical Strategists overseeing architecture or governance
+        </li>
+       </ul>
       </section>
-
-      <section class="about-section" id="who" aria-labelledby="who-title">
-        <div class="section-kicker">Audience fit</div>
-        <h2 class="section-title" id="who-title">Who this bootcamp is for</h2>
-        <p class="about-text">
-          Designed for technical professionals who architect, deliver, or govern Copilot Studio solutions in enterprise environments.
-        </p>
-
-        <div class="fit-grid">
-          <section class="fit-panel" aria-labelledby="typical-attendees-title">
-            <h3 class="fit-heading" id="typical-attendees-title">Typical attendees</h3>
-            <ul class="fit-list">
-              <li class="fit-item">Solution and Enterprise Architects</li>
-              <li class="fit-item">Delivery Consultants and Implementation Leads</li>
-              <li class="fit-item">Partner Technical Architects and Customer Engineers</li>
-              <li class="fit-item">Technical Strategists overseeing architecture or governance</li>
-            </ul>
-          </section>
-
-          <section class="fit-panel" aria-labelledby="best-value-title">
-            <h3 class="fit-heading" id="best-value-title">Best suited for participants who</h3>
-            <ul class="fit-list">
-              <li class="fit-item">Already have Power Platform or Copilot Studio experience</li>
-              <li class="fit-item">Own solution architecture, governance, or implementation strategy</li>
-              <li class="fit-item">Want deeper guidance on scalable patterns, security, and architecture decisions</li>
-            </ul>
-          </section>
-        </div>
-
-        <p><strong>Note:</strong> This program is not intended for beginners who are new to Power Platform or Copilot Studio.</p>
-        <p>Registration closes one week before each event. In-person seats are limited and subject to change based on demand.</p>
-        <p>Virtual events are open to Microsoft employees globally.</p>
+      <section aria-labelledby="best-value-title" class="fit-panel">
+       <h3 class="fit-heading" id="best-value-title">
+        Best Suited for Participants Who
+       </h3>
+       <ul class="fit-list">
+        <li class="fit-item">
+         Already have Power Platform or Copilot Studio experience
+        </li>
+        <li class="fit-item">
+         Own solution architecture, governance, or implementation strategy
+        </li>
+        <li class="fit-item">
+         Want deeper guidance on scalable patterns, security, and architecture decisions
+        </li>
+       </ul>
       </section>
-
-      <section class="about-section" id="sessions">
-        <div class="session-header">
-          <div>
-            <div class="section-kicker">Global delivery</div>
-            <h2 class="section-title" style="margin-bottom: 6px;">Upcoming sessions</h2>
-            <p>Explore upcoming bootcamp sessions by region and availability.</p>
-          </div>
-          <div class="legend" aria-label="Event legend">
-            <span class="legend-item"><span class="mode-dot inperson"></span> In-person</span>
-            <span class="legend-item"><span class="mode-dot virtual"></span> Virtual</span>
-            <span class="legend-item"><span class="mode-dot closed"></span> Closed / pending</span>
-          </div>
-        </div>
-
-    
-
-
-          <article class="session-box">
-            <div class="session-top">
-              <h3 class="session-name">🇸🇬 Singapore</h3>
-              <span class="session-badge">Full</span>
-            </div>
-            <div class="session-meta">
-              <div class="session-meta-row"><span class="meta-icon">📅</span> May 12–14, 2026</div>
-              <div class="session-meta-row"><span class="meta-icon">🕘</span> 9:00 AM–4:30 PM Singapore Standard Time</div>
-            </div>
-            <div class="btn-group" aria-label="Singapore registration options">
-              <a class="register-btn primary" href="https://msevents.microsoft.com/event?id=827309318"><span class="mode-dot inperson"></span>Register in-person</a>
-            </div>
-          </article>
-
-          <article class="session-box">
-            <div class="session-top">
-              <h3 class="session-name">🇪🇺 Munich, Germany</h3>
-              <span class="session-badge">Registration open</span>
-            </div>
-            <div class="session-meta">
-              <div class="session-meta-row"><span class="meta-icon">📅</span> May 27-29, 2026</div>
-              <div class="session-meta-row"><span class="meta-icon">🕘</span> 9:00 AM–4:30 PM local time</div>
-            </div>
-            <div class="btn-group" aria-label="European Union registration status">
-              <a class="register-btn primary" href="https://msevents.microsoft.com/event?id=3680292955"><span class="mode-dot inperson"></span>In-person</a>
-            </div>
-          </article>
-
- <div class="session-list">
-          <article class="session-box">
-            <div class="session-top">
-              <h3 class="session-name">🇺🇸 Redmond, Washington</h3>
-              <span class="session-badge">Closed</span>
-            </div>
-            <div class="session-meta">
-              <div class="session-meta-row"><span class="meta-icon">📅</span> Feb 24–26, 2026</div>
-              <div class="session-meta-row"><span class="meta-icon">🕘</span> 9:00 AM–4:30 PM Pacific Standard Time</div>
-            </div>
-            <div class="btn-group" aria-label="Redmond registration status">
-              <a class="register-btn is-disabled" aria-disabled="true" role="link"><span class="mode-dot inperson"></span>In-person</a>
-              <a class="register-btn is-disabled" aria-disabled="true" role="link"><span class="mode-dot virtual"></span>Virtual</a>
-            </div>
-          </article>
-
-          <article class="session-box">
-            <div class="session-top">
-              <h3 class="session-name">🇺🇸 Atlanta, Georgia</h3>
-              <span class="session-badge">Closed</span>
-            </div>
-            <div class="session-meta">
-              <div class="session-meta-row"><span class="meta-icon">📅</span> Mar 31–Apr 2, 2026</div>
-              <div class="session-meta-row"><span class="meta-icon">🕘</span> 9:00 AM–4:30 PM Eastern Daylight Time</div>
-            </div>
-            <div class="btn-group" aria-label="Atlanta registration options">
-              <a class="register-btn is-disabled" aria-disabled="true" role="link"><span class="mode-dot inperson"></span>In-person</a>
-              <a class="register-btn is-disabled" aria-disabled="true" role="link"><span class="mode-dot virtual"></span>Virtual</a>
-            </div>
-          </article>
-
-             <article class="session-box">
-            <div class="session-top">
-              <h3 class="session-name">Virtual Americas-Eastern Time</h3>
-              <span class="session-badge">Closed</span>
-            </div>
-            <div class="session-meta">
-              <div class="session-meta-row"><span class="meta-icon">📅</span> Apr 28–30, 2026</div>
-              <div class="session-meta-row"><span class="meta-icon">🕘</span> 9:00 AM–4:30 PM Eastern Daylight Time</div>
-            </div>
-            <div class="btn-group" aria-label="Virtual registration options">
-              <a class="register-btn disabled" href="https://msevents.microsoft.com/event?id=2515957006"><span class="mode-dot virtual"></span>Virtual</a>
-            </div>
-          </article>
-        </div>
-      </section>
-
-      
-      <section class="agenda-section" id="agenda" aria-labelledby="agenda-title">
-        <div class="section-kicker">Bootcamp schedule</div>
-        <h2 class="section-title" id="agenda-title">3-day agenda at a glance</h2>
-        <p class="agenda-intro">
-          The re-launched bootcamp includes 16 modules and 10 hands-on labs across three days, blending instruction, demos, labs, and review time. Day sections are collapsed by default for easier scanning.
-        </p>
-
-        <div class="outcome-box">
-          <strong class="outcome-title">You’ll leave with:</strong>
-          <ul class="expect-list">
-            <li class="expect-item">Clear architecture patterns for real Copilot Studio deployments</li>
-            <li class="expect-item">Hands-on experience with ALM, integrations, and governance</li>
-            <li class="expect-item">Confidence making design tradeoffs in complex environments</li>
-          </ul>
-        </div>
-
-        <div class="agenda-accordion">
-          <details class="agenda-details">
-            <summary class="agenda-summary">
-              <div class="agenda-summary-left">
-                <span class="agenda-day-label">Day 1</span>
-                <h3 class="agenda-day-title">Foundations + core concepts</h3>
-              </div>
-              <span class="agenda-chevron" aria-hidden="true"></span>
-            </summary>
-            <ol class="agenda-list">
-              <li class="agenda-item"><div class="agenda-time">09:00–09:15</div><div class="agenda-title interactive">Welcome</div></li>
-              <li class="agenda-item"><div class="agenda-time">09:15–09:30</div><div class="agenda-title interactive">Intro to hands-on labs</div></li>
-              <li class="agenda-item"><div class="agenda-time">09:30–10:00</div><div class="agenda-title module">Module 1 · M365 Agent Builder</div></li>
-              <li class="agenda-item"><div class="agenda-time">10:00–10:15</div><div class="agenda-title break">Coffee break</div></li>
-              <li class="agenda-item"><div class="agenda-time">10:15–10:30</div><div class="agenda-title lab">Lab 1 · M365 Agent Builder</div></li>
-              <li class="agenda-item"><div class="agenda-time">10:30–11:00</div><div class="agenda-title module">Module 2 · Copilot Studio Core Concepts, Part 1</div></li>
-              <li class="agenda-item"><div class="agenda-time">11:00–11:45</div><div class="agenda-title lab">Lab 2 · Creation, Topics, Knowledge, and Tools</div></li>
-              <li class="agenda-item"><div class="agenda-time">11:45–12:45</div><div class="agenda-title break">Lunch break</div></li>
-              <li class="agenda-item"><div class="agenda-time">12:45–13:00</div><div class="agenda-title interactive">Review</div></li>
-              <li class="agenda-item"><div class="agenda-time">13:00–13:30</div><div class="agenda-title module">Module 3 · Copilot Studio Core Concepts, Part 2</div></li>
-              <li class="agenda-item"><div class="agenda-time">13:30–14:15</div><div class="agenda-title lab">Lab 3 · Variables, Agents, and Channels</div></li>
-              <li class="agenda-item"><div class="agenda-time">14:15–14:45</div><div class="agenda-title module">Module 4 · Copilot Studio Core Concepts, Part 3</div></li>
-              <li class="agenda-item"><div class="agenda-time">14:45–15:00</div><div class="agenda-title break">Coffee break</div></li>
-              <li class="agenda-item"><div class="agenda-time">15:00–15:30</div><div class="agenda-title lab">Lab 4 · Analytics and Evaluations</div></li>
-              <li class="agenda-item"><div class="agenda-time">15:30–16:00</div><div class="agenda-title module">Module 5 · Licensing and consumption</div></li>
-              <li class="agenda-item"><div class="agenda-time">16:00–16:30</div><div class="agenda-title interactive">Open AMA</div></li>
-            </ol>
-          </details>
-
-          <details class="agenda-details">
-            <summary class="agenda-summary">
-              <div class="agenda-summary-left">
-                <span class="agenda-day-label">Day 2</span>
-                <h3 class="agenda-day-title">ALM + orchestration + tools</h3>
-              </div>
-              <span class="agenda-chevron" aria-hidden="true"></span>
-            </summary>
-            <ol class="agenda-list">
-              <li class="agenda-item"><div class="agenda-time">09:00–09:15</div><div class="agenda-title interactive">Welcome</div></li>
-              <li class="agenda-item"><div class="agenda-time">09:15–09:45</div><div class="agenda-title module">Module 6 · ALM: Solutions, Environment Variables, Connection References, and Pipelines</div></li>
-              <li class="agenda-item"><div class="agenda-time">09:45–10:30</div><div class="agenda-title lab">Lab 5 · Export / Import Solutions, Environment Variables, Connection References, and Pipelines</div></li>
-              <li class="agenda-item"><div class="agenda-time">10:30–10:45</div><div class="agenda-title break">Coffee break</div></li>
-              <li class="agenda-item"><div class="agenda-time">10:45–11:15</div><div class="agenda-title module">Module 7 · ALM: Component Collections</div></li>
-              <li class="agenda-item"><div class="agenda-time">11:15–11:45</div><div class="agenda-title lab">Lab 6 · Component Collections</div></li>
-              <li class="agenda-item"><div class="agenda-time">11:45–12:15</div><div class="agenda-title module">Module 8 · Orchestration and Dynamic Chaining Concepts with demos</div></li>
-              <li class="agenda-item"><div class="agenda-time">12:15–13:15</div><div class="agenda-title break">Lunch break</div></li>
-              <li class="agenda-item"><div class="agenda-time">13:00–13:15</div><div class="agenda-title interactive">Review</div></li>
-              <li class="agenda-item"><div class="agenda-time">13:15–14:45</div><div class="agenda-title module">Module 9 · Tools</div></li>
-              <li class="agenda-item"><div class="agenda-time">14:45–15:00</div><div class="agenda-title break">Coffee break</div></li>
-              <li class="agenda-item"><div class="agenda-time">15:00–16:00</div><div class="agenda-title lab">Lab 7 · Tools</div></li>
-              <li class="agenda-item"><div class="agenda-time">16:00–16:30</div><div class="agenda-title interactive">Open AMA</div></li>
-            </ol>
-          </details>
-
-          <details class="agenda-details">
-            <summary class="agenda-summary">
-              <div class="agenda-summary-left">
-                <span class="agenda-day-label">Day 3</span>
-                <h3 class="agenda-day-title">Governance + advanced agent architecture</h3>
-              </div>
-              <span class="agenda-chevron" aria-hidden="true"></span>
-            </summary>
-            <ol class="agenda-list">
-              <li class="agenda-item"><div class="agenda-time">09:00–09:15</div><div class="agenda-title interactive">Welcome</div></li>
-              <li class="agenda-item"><div class="agenda-time">09:15–09:30</div><div class="agenda-title module">Module 10 · Additional resources</div></li>
-              <li class="agenda-item"><div class="agenda-time">09:30–10:00</div><div class="agenda-title module">Module 11 · Governance</div></li>
-              <li class="agenda-item"><div class="agenda-time">10:00–10:30</div><div class="agenda-title lab">Lab 8 · Governance: DLP and Purview</div></li>
-              <li class="agenda-item"><div class="agenda-time">10:30–10:45</div><div class="agenda-title break">Coffee break</div></li>
-              <li class="agenda-item"><div class="agenda-time">10:45–11:00</div><div class="agenda-title module">Module 12 · SDK demo</div></li>
-              <li class="agenda-item"><div class="agenda-time">11:00–11:30</div><div class="agenda-title module">Module 13 · Multi-agent architecture</div></li>
-              <li class="agenda-item"><div class="agenda-time">11:30–12:00</div><div class="agenda-title lab">Lab 9 · Multi-agent</div></li>
-              <li class="agenda-item"><div class="agenda-time">12:00–13:00</div><div class="agenda-title break">Lunch break</div></li>
-              <li class="agenda-item"><div class="agenda-time">13:00–13:30</div><div class="agenda-title module">[Preview stops here — source file was cut off]</div></li>
-            </ol>
-          </details>
-        </div>
-      </section>
+     </div>
+     <p>
+      <strong>
+       Note:
+      </strong>
+      This program is not intended for beginners who are new to Power Platform or Copilot Studio.
+     </p>
+     <p>
+      Registration closes one week before each event. In-person seats are limited and subject to change based on demand.
+     </p>
+     <p>
+      Virtual events are open to Microsoft employees globally.
+     </p>
     </section>
+    <section class="about-section" id="sessions">
+     <div class="session-header">
+      <div>
+       <div class="section-kicker">
+        Global Delivery
+       </div>
+       <h2 class="section-title section-title-compact">
+        Upcoming Sessions
+       </h2>
+       <p>
+        Explore upcoming bootcamp sessions by region and availability.
+       </p>
+      </div>
+      <div aria-label="Event legend" class="legend">
+       <span class="legend-item">
+        <span class="mode-dot inperson">
+        </span>
+        In-person
+       </span>
+       <span class="legend-item">
+        <span class="mode-dot virtual">
+        </span>
+        Virtual
+       </span>
+       <span class="legend-item">
+        <span class="mode-dot closed">
+        </span>
+        Closed / pending
+       </span>
+      </div>
+     </div>
+     <div class="session-list">
+      <article class="session-box">
+       <div class="session-top">
+        <h3 class="session-name">
+         🇪🇺 Munich, Germany
+        </h3>
+        <span class="session-badge">
+         Full / Waitlist Only
+        </span>
+       </div>
+       <div class="session-meta">
+        <div class="session-meta-row">
+         <span class="meta-icon">
+          📅
+         </span>
+         May 27&ndash;29, 2026
+        </div>
+        <div class="session-meta-row">
+         <span class="meta-icon">
+          🕘
+         </span>
+         9:00 AM&ndash;4:30 PM local time
+        </div>
+       </div>
+       <div aria-label="Munich registration status" class="btn-group">
+        <a aria-disabled="true" class="register-btn is-disabled" role="link" tabindex="-1">
+         <span class="mode-dot inperson">
+         </span>
+         In-Person Full
+        </a>
+       </div>
+      </article>
+      <article class="session-box">
+       <div class="session-top">
+        <h3 class="session-name">
+         🇺🇸 Redmond, Washington
+        </h3>
+        <span class="session-badge">
+         Closed
+        </span>
+       </div>
+       <div class="session-meta">
+        <div class="session-meta-row">
+         <span class="meta-icon">
+          📅
+         </span>
+         Feb 24&ndash;26, 2026
+        </div>
+        <div class="session-meta-row">
+         <span class="meta-icon">
+          🕘
+         </span>
+         9:00 AM&ndash;4:30 PM Pacific Standard Time
+        </div>
+       </div>
+       <div aria-label="Redmond registration status" class="btn-group">
+        <a aria-disabled="true" class="register-btn is-disabled" role="link" tabindex="-1">
+         <span class="mode-dot inperson">
+         </span>
+         In-Person
+        </a>
+        <a aria-disabled="true" class="register-btn is-disabled" role="link" tabindex="-1">
+         <span class="mode-dot virtual">
+         </span>
+         Virtual
+        </a>
+       </div>
+      </article>
+      <article class="session-box">
+       <div class="session-top">
+        <h3 class="session-name">
+         🇺🇸 Atlanta, Georgia
+        </h3>
+        <span class="session-badge">
+         Closed
+        </span>
+       </div>
+       <div class="session-meta">
+        <div class="session-meta-row">
+         <span class="meta-icon">
+          📅
+         </span>
+         Mar 31&ndash;Apr 2, 2026
+        </div>
+        <div class="session-meta-row">
+         <span class="meta-icon">
+          🕘
+         </span>
+         9:00 AM&ndash;4:30 PM Eastern Daylight Time
+        </div>
+       </div>
+       <div aria-label="Atlanta registration status" class="btn-group">
+        <a aria-disabled="true" class="register-btn is-disabled" role="link" tabindex="-1">
+         <span class="mode-dot inperson">
+         </span>
+         In-Person
+        </a>
+        <a aria-disabled="true" class="register-btn is-disabled" role="link" tabindex="-1">
+         <span class="mode-dot virtual">
+         </span>
+         Virtual
+        </a>
+       </div>
+      </article>
+      <article class="session-box">
+       <div class="session-top">
+        <h3 class="session-name">
+         Virtual Americas &mdash; Eastern Time
+        </h3>
+        <span class="session-badge">
+         Closed
+        </span>
+       </div>
+       <div class="session-meta">
+        <div class="session-meta-row">
+         <span class="meta-icon">
+          📅
+         </span>
+         Apr 28&ndash;30, 2026
+        </div>
+        <div class="session-meta-row">
+         <span class="meta-icon">
+          🕘
+         </span>
+         9:00 AM&ndash;4:30 PM Eastern Daylight Time
+        </div>
+       </div>
+       <div aria-label="Virtual registration status" class="btn-group">
+        <a aria-disabled="true" class="register-btn is-disabled" role="link" tabindex="-1">
+         <span class="mode-dot virtual">
+         </span>
+         Virtual
+        </a>
+       </div>
+      </article>
+      <article class="session-box">
+       <div class="session-top">
+        <h3 class="session-name">
+         🇸🇬 Singapore
+        </h3>
+        <span class="session-badge">
+         Closed
+        </span>
+       </div>
+       <div class="session-meta">
+        <div class="session-meta-row">
+         <span class="meta-icon">
+          📅
+         </span>
+         May 12&ndash;14, 2026
+        </div>
+        <div class="session-meta-row">
+         <span class="meta-icon">
+          🕘
+         </span>
+         9:00 AM&ndash;4:30 PM Singapore Standard Time
+        </div>
+       </div>
+       <div aria-label="Singapore registration status" class="btn-group">
+        <a aria-disabled="true" class="register-btn is-disabled" role="link" tabindex="-1">
+         <span class="mode-dot inperson">
+         </span>
+         In-Person
+        </a>
+       </div>
+      </article>
+     </div>
+    </section>
+    <section aria-labelledby="resources-title" class="about-section" id="resources">
+     <div class="section-kicker">
+      Resources
+     </div>
+     <h2 class="section-title" id="resources-title">
+      Microsoft Agentic Transformation Resources
+     </h2>
+     <p class="about-text">
+      Resources to help you on your journey to agentic transformation&mdash;building, deploying, and managing agents with Microsoft tools and platforms. Curated and maintained by the Microsoft Copilot Acceleration Team (CAT).
+     </p>
+     <div aria-label="Microsoft Agentic Transformation Resources link" class="btn-group resources-primary-action">
+      <a class="register-btn primary" href="https://microsoft.github.io/agent-resources/" rel="noopener" target="_blank">
+       Open Microsoft Agentic Transformation Resources
+      </a>
+     </div>
+     <div aria-label="Bootcamp resource links" class="fit-grid resources-grid">
+      <section aria-labelledby="github-resource-title" class="fit-panel">
+       <h3 class="fit-heading" id="github-resource-title">
+        Follow Us on GitHub
+       </h3>
+       <p class="about-text">
+        Follow the Microsoft Copilot Studio GitHub space for updates, source content, and related technical resources.
+       </p>
+       <a class="register-btn primary" href="https://github.com/microsoft/mcs-labs" rel="noopener" target="_blank">
+        Follow Us on GitHub
+       </a>
+      </section>
+      <section aria-labelledby="decks-resource-title" class="fit-panel">
+       <h3 class="fit-heading" id="decks-resource-title">
+        Architecture Decks
+       </h3>
+       <p class="about-text">
+        Open the Microsoft Copilot Studio Architecture Bootcamp deck content.
+       </p>
+       <a class="register-btn primary" href="https://aka.ms/mcsdecks" rel="noopener" target="_blank">
+        Open Decks
+       </a>
+      </section>
+      <section aria-labelledby="labs-resource-title" class="fit-panel">
+       <h3 class="fit-heading" id="labs-resource-title">
+        Hands-On Labs
+       </h3>
+       <p class="about-text">
+        Review lab content for this series.
+       </p>
+       <a class="register-btn primary" href="https://aka.ms/mcslabs" rel="noopener" target="_blank">
+        Open Labs
+       </a>
+      </section>
+     </div>
+    </section>
+    <section aria-labelledby="agenda-title" class="agenda-section" id="agenda">
+     <div class="section-kicker">
+      Bootcamp Schedule
+     </div>
+     <h2 class="section-title" id="agenda-title">
+      Three-Day Agenda at a Glance
+     </h2>
+     <p class="agenda-intro">
+      The relaunched bootcamp includes 16 modules and 10 hands-on labs across three days, blending instruction, demos, labs, and review time. Day sections are collapsed by default for easier scanning.
+     </p>
+     <div class="outcome-box">
+      <strong class="outcome-title">
+       You&rsquo;ll Leave With:
+      </strong>
+      <ul class="expect-list">
+       <li class="expect-item">
+        Clear architecture patterns for real Copilot Studio deployments
+       </li>
+       <li class="expect-item">
+        Hands-on experience with ALM, integrations, and governance
+       </li>
+       <li class="expect-item">
+        Confidence making design tradeoffs in complex environments
+       </li>
+      </ul>
+     </div>
+     <div class="agenda-accordion">
+      <details class="agenda-details">
+       <summary class="agenda-summary">
+        <div class="agenda-summary-left">
+         <span class="agenda-day-label">
+          Day 1
+         </span>
+         <h3 class="agenda-day-title">
+          Foundations + Core Concepts
+         </h3>
+        </div>
+        <span aria-hidden="true" class="agenda-toggle">
+         <span class="agenda-toggle-closed">
+          Closed &middot; Expand
+         </span>
+         <span class="agenda-toggle-open">
+          Open &middot; Collapse
+         </span>
+        </span>
+        <span aria-hidden="true" class="agenda-chevron">
+        </span>
+       </summary>
+       <ol class="agenda-list">
+        <li class="agenda-item">
+         <div class="agenda-time">
+          09:00&ndash;09:15
+         </div>
+         <div class="agenda-title interactive">
+          Welcome
+         </div>
+        </li>
+        <li class="agenda-item">
+         <div class="agenda-time">
+          09:15&ndash;09:30
+         </div>
+         <div class="agenda-title interactive">
+          Intro to Hands-On Labs
+         </div>
+        </li>
+        <li class="agenda-item">
+         <div class="agenda-time">
+          09:30&ndash;10:00
+         </div>
+         <div class="agenda-title module">
+          Module 1 &middot; M365 Agent Builder
+         </div>
+        </li>
+        <li class="agenda-item">
+         <div class="agenda-time">
+          10:00&ndash;10:15
+         </div>
+         <div class="agenda-title break">
+          Coffee Break
+         </div>
+        </li>
+        <li class="agenda-item">
+         <div class="agenda-time">
+          10:15&ndash;10:30
+         </div>
+         <div class="agenda-title lab">
+          Lab 1 &middot; M365 Agent Builder
+         </div>
+        </li>
+        <li class="agenda-item">
+         <div class="agenda-time">
+          10:30&ndash;11:00
+         </div>
+         <div class="agenda-title module">
+          Module 2 &middot; Copilot Studio Core Concepts, Part 1
+         </div>
+        </li>
+        <li class="agenda-item">
+         <div class="agenda-time">
+          11:00&ndash;11:45
+         </div>
+         <div class="agenda-title lab">
+          Lab 2 &middot; Creation, Topics, Knowledge, and Tools
+         </div>
+        </li>
+        <li class="agenda-item">
+         <div class="agenda-time">
+          11:45&ndash;12:45
+         </div>
+         <div class="agenda-title break">
+          Lunch Break
+         </div>
+        </li>
+        <li class="agenda-item">
+         <div class="agenda-time">
+          12:45&ndash;13:00
+         </div>
+         <div class="agenda-title interactive">
+          Review
+         </div>
+        </li>
+        <li class="agenda-item">
+         <div class="agenda-time">
+          13:00&ndash;13:30
+         </div>
+         <div class="agenda-title module">
+          Module 3 &middot; Copilot Studio Core Concepts, Part 2
+         </div>
+        </li>
+        <li class="agenda-item">
+         <div class="agenda-time">
+          13:30&ndash;14:15
+         </div>
+         <div class="agenda-title lab">
+          Lab 3 &middot; Variables, Agents, and Channels
+         </div>
+        </li>
+        <li class="agenda-item">
+         <div class="agenda-time">
+          14:15&ndash;14:45
+         </div>
+         <div class="agenda-title module">
+          Module 4 &middot; Copilot Studio Core Concepts, Part 3
+         </div>
+        </li>
+        <li class="agenda-item">
+         <div class="agenda-time">
+          14:45&ndash;15:00
+         </div>
+         <div class="agenda-title break">
+          Coffee Break
+         </div>
+        </li>
+        <li class="agenda-item">
+         <div class="agenda-time">
+          15:00&ndash;15:30
+         </div>
+         <div class="agenda-title lab">
+          Lab 4 &middot; Analytics and Evaluations
+         </div>
+        </li>
+        <li class="agenda-item">
+         <div class="agenda-time">
+          15:30&ndash;16:00
+         </div>
+         <div class="agenda-title module">
+          Module 5 &middot; Licensing and Consumption
+         </div>
+        </li>
+        <li class="agenda-item">
+         <div class="agenda-time">
+          16:00&ndash;16:30
+         </div>
+         <div class="agenda-title interactive">
+          Open AMA
+         </div>
+        </li>
+       </ol>
+      </details>
+      <details class="agenda-details">
+       <summary class="agenda-summary">
+        <div class="agenda-summary-left">
+         <span class="agenda-day-label">
+          Day 2
+         </span>
+         <h3 class="agenda-day-title">
+          ALM + Orchestration + Tools
+         </h3>
+        </div>
+        <span aria-hidden="true" class="agenda-toggle">
+         <span class="agenda-toggle-closed">
+          Closed &middot; Expand
+         </span>
+         <span class="agenda-toggle-open">
+          Open &middot; Collapse
+         </span>
+        </span>
+        <span aria-hidden="true" class="agenda-chevron">
+        </span>
+       </summary>
+       <ol class="agenda-list">
+        <li class="agenda-item">
+         <div class="agenda-time">
+          09:00&ndash;09:15
+         </div>
+         <div class="agenda-title interactive">
+          Welcome
+         </div>
+        </li>
+        <li class="agenda-item">
+         <div class="agenda-time">
+          09:15&ndash;09:45
+         </div>
+         <div class="agenda-title module">
+          Module 6 &middot; ALM: Solutions, Environment Variables, Connection References, and Pipelines
+         </div>
+        </li>
+        <li class="agenda-item">
+         <div class="agenda-time">
+          09:45&ndash;10:30
+         </div>
+         <div class="agenda-title lab">
+          Lab 5 &middot; Export / Import Solutions, Environment Variables, Connection References, and Pipelines
+         </div>
+        </li>
+        <li class="agenda-item">
+         <div class="agenda-time">
+          10:30&ndash;10:45
+         </div>
+         <div class="agenda-title break">
+          Coffee Break
+         </div>
+        </li>
+        <li class="agenda-item">
+         <div class="agenda-time">
+          10:45&ndash;11:15
+         </div>
+         <div class="agenda-title module">
+          Module 7 &middot; ALM: Component Collections
+         </div>
+        </li>
+        <li class="agenda-item">
+         <div class="agenda-time">
+          11:15&ndash;11:45
+         </div>
+         <div class="agenda-title lab">
+          Lab 6 &middot; Component Collections
+         </div>
+        </li>
+        <li class="agenda-item">
+         <div class="agenda-time">
+          11:45&ndash;12:15
+         </div>
+         <div class="agenda-title module">
+          Module 8 &middot; Orchestration and Dynamic Chaining Concepts with demos
+         </div>
+        </li>
+        <li class="agenda-item">
+         <div class="agenda-time">
+          12:15&ndash;13:15
+         </div>
+         <div class="agenda-title break">
+          Lunch Break
+         </div>
+        </li>
+        <li class="agenda-item">
+         <div class="agenda-time">
+          13:00&ndash;13:15
+         </div>
+         <div class="agenda-title interactive">
+          Review
+         </div>
+        </li>
+        <li class="agenda-item">
+         <div class="agenda-time">
+          13:15&ndash;14:45
+         </div>
+         <div class="agenda-title module">
+          Module 9 &middot; Tools
+         </div>
+        </li>
+        <li class="agenda-item">
+         <div class="agenda-time">
+          14:45&ndash;15:00
+         </div>
+         <div class="agenda-title break">
+          Coffee Break
+         </div>
+        </li>
+        <li class="agenda-item">
+         <div class="agenda-time">
+          15:00&ndash;16:00
+         </div>
+         <div class="agenda-title lab">
+          Lab 7 &middot; Tools
+         </div>
+        </li>
+        <li class="agenda-item">
+         <div class="agenda-time">
+          16:00&ndash;16:30
+         </div>
+         <div class="agenda-title interactive">
+          Open AMA
+         </div>
+        </li>
+       </ol>
+      </details>
+      <details class="agenda-details">
+       <summary class="agenda-summary">
+        <div class="agenda-summary-left">
+         <span class="agenda-day-label">
+          Day 3
+         </span>
+         <h3 class="agenda-day-title">
+          Governance + Advanced Agent Architecture
+         </h3>
+        </div>
+        <span aria-hidden="true" class="agenda-toggle">
+         <span class="agenda-toggle-closed">
+          Closed &middot; Expand
+         </span>
+         <span class="agenda-toggle-open">
+          Open &middot; Collapse
+         </span>
+        </span>
+        <span aria-hidden="true" class="agenda-chevron">
+        </span>
+       </summary>
+       <ol class="agenda-list">
+        <li class="agenda-item">
+         <div class="agenda-time">
+          09:00&ndash;09:15
+         </div>
+         <div class="agenda-title interactive">
+          Welcome
+         </div>
+        </li>
+        <li class="agenda-item">
+         <div class="agenda-time">
+          09:15&ndash;09:30
+         </div>
+         <div class="agenda-title module">
+          Module 10 &middot; Additional Resources
+         </div>
+        </li>
+        <li class="agenda-item">
+         <div class="agenda-time">
+          09:30&ndash;10:00
+         </div>
+         <div class="agenda-title module">
+          Module 11 &middot; Governance
+         </div>
+        </li>
+        <li class="agenda-item">
+         <div class="agenda-time">
+          10:00&ndash;10:30
+         </div>
+         <div class="agenda-title lab">
+          Lab 8 &middot; Governance: DLP and Purview
+         </div>
+        </li>
+        <li class="agenda-item">
+         <div class="agenda-time">
+          10:30&ndash;10:45
+         </div>
+         <div class="agenda-title break">
+          Coffee Break
+         </div>
+        </li>
+        <li class="agenda-item">
+         <div class="agenda-time">
+          10:45&ndash;11:00
+         </div>
+         <div class="agenda-title module">
+          Module 12 &middot; SDK demo
+         </div>
+        </li>
+        <li class="agenda-item">
+         <div class="agenda-time">
+          11:00&ndash;11:30
+         </div>
+         <div class="agenda-title module">
+          Module 13 &middot; Multi-Agent Architecture
+         </div>
+        </li>
+        <li class="agenda-item">
+         <div class="agenda-time">
+          11:30&ndash;12:00
+         </div>
+         <div class="agenda-title lab">
+          Lab 9 &middot; Multi-Agent
+         </div>
+        </li>
+        <li class="agenda-item">
+         <div class="agenda-time">
+          12:00&ndash;13:00
+         </div>
+         <div class="agenda-title break">
+          Lunch Break
+         </div>
+        </li>
+        <li class="agenda-item">
+         <div class="agenda-time">
+          13:00&ndash;16:30
+         </div>
+         <div class="agenda-title interactive">
+          Advanced Architecture Sessions, Final Lab, Review, and Open AMA
+         </div>
+        </li>
+       </ol>
+      </details>
+     </div>
+    </section>
+   </section>
   </main>
-  <div class="preview-warning"><strong>Preview note:</strong> This local preview was repaired after the uploaded source ended mid-tag. Do not commit this repaired file as-is; use it to inspect layout only.</div>
-</body>
+ </body>
 </html>
