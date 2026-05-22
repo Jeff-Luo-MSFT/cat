@@ -1,4 +1,4 @@
-﻿sessions:
+sessions:
   - date: "2025-03-05"
     title: "Unlocking the Potential of Copilot Studio"
     description: "Discover the power of autonomous agents and AI tools through real-world examples and interactive activities."
@@ -380,3 +380,9 @@
     title: "Connecting Customer-Built AI to Microsoft 365 Copilot: The Proxy Agent Pattern"
     description: "Join this session to discover the Proxy Agent pattern for connecting customer‑built Agents to Microsoft 365 Copilot." 
     register_link: "https://aka.ms/AIWebinars/ProxyAgentPattern"
+
+  - date: "2026-06-03"
+    time: "9:00 AM PT"
+    title: "Real-World Agent Case Studies Through Storytelling"
+    description: "Hear how Graebel is transforming their organization with Microsoft Copilot Studio, Dynamics, and Power Platform — real-world agentic solutions that solve business challenges and deliver measurable impact."
+    register_link: "https://aka.ms/AiWebinars/CaseStudies6"
